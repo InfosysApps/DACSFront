@@ -1,4 +1,4 @@
-# DACSFront
+# DACSFront <a href="https://travis-ci.com/github/InfosysApps/DACSFront"><img src="https://api.travis-ci.com/InfosysApps/DACSFront.svg?branch=develop" alt="Build Status"></a>
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
 
