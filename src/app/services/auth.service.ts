@@ -18,15 +18,15 @@ export class AuthService {
    }
 
   public LoginVerifyPostCall(data) : Observable<any> 
-    {
-      return this._http.post('http://localhost:51542/api/login/verify', data, {headers:this.Header})
-        .pipe(
-          retry(1),
-          catchError(this.HandleError),
-          map(response => {
-            return response;
-        }))
-    }
+  {
+    return this._http.post('http://localhost:51542/api/login/verify', data, {headers:this.Header})
+      .pipe(
+        retry(1),
+        catchError(this.HandleError),
+        map(response => {
+          return response;
+      }))
+  }
 
     //Error Handling
     private HandleError(error) {

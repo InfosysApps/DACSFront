@@ -5,8 +5,6 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
-
-
 const routes: Routes = [
   { path: '', component: AppComponent},
   { path: 'Login', component: LoginComponent },
