@@ -24,7 +24,8 @@ export class LoginComponent implements OnInit {
               private _AuthService : AuthService,
               private _SessionHelper : SessionHelperService,
               private _Talk : TalkService,
-              private _Injector:Injector) { }
+              private _Injector:Injector,
+              private _Router : Router) { }
 
 
   ngOnInit(): void {
@@ -70,12 +71,15 @@ export class LoginComponent implements OnInit {
           });
 
           this.loginForm.reset();
+          this.submitted = true;
+          localStorage.setItem('isLoggedIn', 'true')
+          this._Router.navigate(['/UserDashboard'])
     }
     else{
       Object.keys(this.loginForm.controls).forEach(field => { // {1}
         const control = this.loginForm.get(field);            // {2}
         control.markAsTouched({ onlySelf: true });            // {3}
       });
-    }  
+    }
   }//LoginSubmit ends here.
 }

@@ -12,6 +12,8 @@ import { AuthService } from './services/auth.service';
 import {TokenInterceptorService} from './services/token-interceptor.service';
 import { StorageServiceModule } from 'ngx-webstorage-service';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     LoginComponent,
     SignupComponent,
     NotFoundComponent,
+    UserDashboardComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,

@@ -4,12 +4,15 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { AccessGuardService } from './services/access-guard.service';
 
 const routes: Routes = [
-  { path: '', component: AppComponent},
+  { path: '', redirectTo: '/Login', pathMatch: 'full'},
   { path: 'Login', component: LoginComponent },
   { path: 'Signup', component: SignupComponent },
-  { path: '**', component: NotFoundComponent },
+  { path: 'UserDashboard', component: UserDashboardComponent, canActivate:[AccessGuardService]},
+  { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({

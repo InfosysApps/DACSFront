@@ -25,6 +25,6 @@ export class SessionHelperService {
    * GetSessionStorage
   key: string, value: string   */
   public GetSessionStorage(key: string) {
-    this._SessionStorage.get(key);
+    return this._SessionStorage.get(key);
   }
 }
