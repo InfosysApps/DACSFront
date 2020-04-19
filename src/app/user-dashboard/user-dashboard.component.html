@@ -1,1 +1,24 @@
 <app-navbar></app-navbar>
+<div class = "container-fluid text-center">
+    <h4>Customer Information</h4>
+</div>
+<table class="table table-">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Contact No.</th>
+        <th>Assigned To</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of customers; let i = index">
+        <td>{{i + 1}}</td>
+        <td>{{customer.name}}</td>
+        <td>{{customer.email}}</td>
+        <td>{{customer.contactNo}}</td>
+        <td>{{customer.assignedTo}}</td>
+      </tr>
+    </tbody>
+</table>
