@@ -13,6 +13,22 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  page1() {
+    console.log("Inside page1 function");
+  }
+
+  page2() {
+    console.log("Inside page2 function");
+  }
+
+  page3() {
+    console.log("Inside page3 function");
+  }
+
+  contactUs() {
+    console.log("Inside contactUs function");
+  }
+
   logout() {
     this.router.navigate(['/Login']);
     localStorage.removeItem('isLoggedIn');
