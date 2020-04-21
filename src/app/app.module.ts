@@ -15,6 +15,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { CustomerDetailsComponent } from './user-dashboard/customer-details/customer-details.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
     NotFoundComponent,
     UserDashboardComponent,
     NavbarComponent,
+    CustomerDetailsComponent,
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { Customer } from '../models/customer';
 import { Account } from '../models/account';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-dashboard',
@@ -29,7 +30,7 @@ export class UserDashboardComponent  {
     this.getMyCustomers();
   }
 
-  constructor() {}
+  constructor(private router : Router) {}
 
   initializeCustomerData() {
     this.customersdata = [
@@ -86,6 +87,7 @@ export class UserDashboardComponent  {
     console.log(customer.id);
     this.pos = customer.id;
     this.selectedCustomer = customer;
+    // this.router.navigate(['/Details']);
   }
 
   goBack() {
