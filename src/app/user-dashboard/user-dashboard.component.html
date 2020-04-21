@@ -1,39 +1,122 @@
 <app-navbar></app-navbar>
 <!--The content below is only a placeholder and can be replaced.-->
-<div class="container">
-  
-
-  <div>
-    <h4 class="text-info">List Of Dormant Accounts</h4>
-    <div>&nbsp;</div>
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th>Id</th>
-          <th>Fullname</th>
-          <th>Phone no.</th>
-          <th>Email</th>
-          <th>Gender</th>
-          <th>Nationality</th>
-          <th>Assigned to Me</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let customer of customersdata | paginate: { itemsPerPage: count, currentPage: p }">
-          <td>{{customer.id}}</td>
-          <td>{{customer.name}}</td>
-          <td>{{customer.phoneno}}</td>
-          <td>{{customer.email}}</td>
-          <td>{{customer.gender}}</td>
-          <td>{{customer.nationality}}</td>
-          <td><button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Asigned to Me</button></td>
-        </tr>
-      </tbody>
-    </table>
+<div *ngIf = "pos == -1">
+  <div class="container" *ngIf="!showMyActivities">
+    <br>
+    <div>
+      <h4 class="text-info">List Of Dormant Accounts</h4>
+      <div>&nbsp;</div>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Contact No.</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>Nationality</th>
+            <th>Assigned to</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let customer of customers | paginate: { itemsPerPage: count, currentPage: p }">
+            <td (click) = "displayDetails(customer)">{{customer.id}}</td>
+            <td (click) = "displayDetails(customer)">{{customer.name}}</td>
+            <td (click) = "displayDetails(customer)">{{customer.contactNo}}</td>
+            <td (click) = "displayDetails(customer)">{{customer.email}}</td>
+            <td (click) = "displayDetails(customer)">{{customer.gender}}</td>
+            <td (click) = "displayDetails(customer)">{{customer.nationality}}</td>
+            <td *ngIf="checkAssignedTo(customer)"><button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" (click) = "assignToUser(customer)">Assign to Me</button></td>
+            <td *ngIf="!checkAssignedTo(customer)" (click) = "displayDetails(customer)">{{customer.assignedTo}}</td>
+          </tr>
+        </tbody>
+      </table>
   </div>
-
-  <!--Including the pagination control.-->
+  
+    <!--Including the pagination control.-->
   <div class="text-right">
-    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+  
+    <br>
+    <button type="button" class="btn btn-success" (click)="showAssignedToMe()">Show assigned to me</button>
+  </div>
+  <div class="container" *ngIf="showMyActivities">
+    <br>
+    <div>
+      <h4 class="text-info">My Open Activities</h4>
+      <div>&nbsp;</div>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Contact No.</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>Nationality</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let customer of myCustomers | paginate: { itemsPerPage: count1, currentPage: p1 }">
+            <td (click) = "displayDetails(customer)">{{customer.id}}</td>
+            <td (click) = "displayDetails(customer)">{{customer.name}}</td>
+            <td (click) = "displayDetails(customer)">{{customer.contactNo}}</td>
+            <td (click) = "displayDetails(customer)">{{customer.email}}</td>
+            <td (click) = "displayDetails(customer)">{{customer.gender}}</td>
+            <td (click) = "displayDetails(customer)">{{customer.nationality}}</td>
+           </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!--Including the pagination control.-->
+    <div class="text-right">
+      <pagination-controls (pageChange)="p1 = $event"></pagination-controls>
+    </div>
+    <br>
+    <button type="button" class="btn btn-danger" (click)="showAllActivities()">Back</button>
   </div>
 </div>
+<div *ngIf="pos != -1">
+  <h4 class="text-info text-center">Customer Information</h4>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>{{selectedCustomer.id}}</th>
+      </tr>
+      <tr>
+        <th>Name</th>
+        <th>{{selectedCustomer.name}}</th>
+      </tr>
+      <tr>
+        <th>Contact No.</th>
+        <th>{{selectedCustomer.contactNo}}</th>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <th>{{selectedCustomer.email}}</th>
+      </tr>
+      <tr>
+        <th>Gender</th>
+        <th>{{selectedCustomer.gender}}</th>
+      </tr>
+      <tr>
+        <th>Nationality</th>
+        <th>{{selectedCustomer.nationality}}</th>
+      </tr>
+      <tr>
+        <th>Assigned to</th>
+        <th>{{selectedCustomer.assignedTo}}</th>
+      </tr>
+    </thead>
+  </table>
+  <br>
+  <button type="button" class="btn btn-success" (click) = "assignToUser(selectedCustomer)">Assign To Me</button>
+  <span>&nbsp;</span><span>&nbsp;</span>
+  <button type="button" class="btn btn-danger" (click) = "goBack()">Back</button>
+</div>
+
+
+
