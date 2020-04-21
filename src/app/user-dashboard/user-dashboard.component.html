@@ -1,24 +1,39 @@
 <app-navbar></app-navbar>
-<div class = "container-fluid text-center">
-    <h4>Customer Information</h4>
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container">
+  
+
+  <div>
+    <h4 class="text-info">List Of Dormant Accounts</h4>
+    <div>&nbsp;</div>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Fullname</th>
+          <th>Phone no.</th>
+          <th>Email</th>
+          <th>Gender</th>
+          <th>Nationality</th>
+          <th>Assigned to Me</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let customer of customersdata | paginate: { itemsPerPage: count, currentPage: p }">
+          <td>{{customer.id}}</td>
+          <td>{{customer.name}}</td>
+          <td>{{customer.phoneno}}</td>
+          <td>{{customer.email}}</td>
+          <td>{{customer.gender}}</td>
+          <td>{{customer.nationality}}</td>
+          <td><button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Asigned to Me</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!--Including the pagination control.-->
+  <div class="text-right">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
 </div>
-<table class="table table-">
-    <thead>
-      <tr>
-        <th>Id</th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Contact No.</th>
-        <th>Assigned To</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let customer of customers; let i = index">
-        <td>{{i + 1}}</td>
-        <td>{{customer.name}}</td>
-        <td>{{customer.email}}</td>
-        <td>{{customer.contactNo}}</td>
-        <td>{{customer.assignedTo}}</td>
-      </tr>
-    </tbody>
-</table>
