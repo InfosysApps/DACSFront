@@ -13,20 +13,12 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  page1() {
+  import() {
     console.log("Inside page1 function");
   }
 
-  page2() {
+  export() {
     console.log("Inside page2 function");
-  }
-
-  page3() {
-    console.log("Inside page3 function");
-  }
-
-  contactUs() {
-    console.log("Inside contactUs function");
   }
 
   logout() {

@@ -1,5 +1,6 @@
 <app-navbar></app-navbar>
 <!--The content below is only a placeholder and can be replaced.-->
+
 <div *ngIf = "pos == -1">
   <div class="container" *ngIf="!showMyActivities">
     <br>
@@ -104,33 +105,32 @@
 </div>
 <div *ngIf="pos != -1">
   <app-customer-details [selectedCustomer]="selectedCustomer"></app-customer-details>
-  <br>
   <span>&nbsp;</span><span>&nbsp;&nbsp;&nbsp;</span>
   <button href="#myModal" class="trigger-btn" data-toggle="modal" type="button" class="btn btn-success" >Assign To Me</button>
   <span>&nbsp;</span><span>&nbsp;</span>
   <button type="button" class="btn btn-danger" (click) = "goBack()">Back</button>
+  <br><br>
 
-<!-- Modal HTML -->
-<div id="myModal" class="modal fade">
-	<div class="modal-dialog modal-confirm">
-		<div class="modal-content">
-			<div class="modal-header ">
-      	
-				<h4 class="modal-title">Are you sure?</h4>	
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-			</div>
-			<div class="modal-body">
-				<p>Do you really want to Assign this task? This process cannot be undone.</p>
-			</div>
-			<div class="modal-footer">
-        <button type="button" data-dismiss="modal" class="btn btn-danger" (click) = "assignToUser(selectedCustomer)">Yes</button>
-				<button type="button" class="btn btn-info" data-dismiss="modal">No</button>
-			</div>
-		</div>
-	</div>
-</div>  
+  <!-- Modal HTML -->
+  <div id="myModal" class="modal fade">
+    <div class="modal-dialog modal-confirm">
+      <div class="modal-content">
+        <div class="modal-header ">
+          
+          <h4 class="modal-title">Are you sure?</h4>	
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <div class="modal-body">
+          <p>Do you really want to Assign this task? This process cannot be undone.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" data-dismiss="modal" class="btn btn-danger" (click) = "assignToUser(selectedCustomer)">Yes</button>
+          <button type="button" class="btn btn-info" data-dismiss="modal">No</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <app-customer-feedback></app-customer-feedback>
+  <br>
 </div>
-
-
-
-

@@ -9,18 +9,17 @@
         <a class="nav-link" routerLink="/UserDashboard">Home</a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropbtn dropdown-toggle" data-toggle="dropdown">Menu
+        <a class="nav-link dropbtn dropdown-toggle" data-toggle="dropdown">File
         <span class="fa fa-caret-down"></span></a>
         <ul class="dropdown-menu dropdown-content">
-          <li><a (click)="page1()">Page 1</a></li>
-          <li><a (click)="page2()">Page 2</a></li>
-          <li><a (click)="page3()">Page 3</a></li>
+          <li><a (click)="import()">Import</a></li>
+          <li><a (click)="export()">Export</a></li>
         </ul>
       </li>
     </ul>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" (click)="contactUs()">Contact Us</a>
+        <a class="nav-link">Welcome User</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" (click)="logout()">Logout</a>
