@@ -16,6 +16,9 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
 import { NavbarComponent } from './navbar/navbar.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { CustomerDetailsComponent } from './user-dashboard/customer-details/customer-details.component';
+// import { DormantAccountsComponent } from './user-dashboard/dormant-accounts/dormant-accounts.component';
+// import { UserActivitiesComponent } from './user-dashboard/user-activities/user-activities.component';
+import { CustomerFeedbackComponent } from './user-dashboard/customer-feedback/customer-feedback.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,9 @@ import { CustomerDetailsComponent } from './user-dashboard/customer-details/cust
     UserDashboardComponent,
     NavbarComponent,
     CustomerDetailsComponent,
+    // DormantAccountsComponent,
+    // UserActivitiesComponent,
+    CustomerFeedbackComponent,
   ],
   imports: [
     BrowserModule,
