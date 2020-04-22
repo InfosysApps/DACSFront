@@ -26,8 +26,31 @@
             <td (click) = "displayDetails(customer)">{{customer.email}}</td>
             <td (click) = "displayDetails(customer)">{{customer.gender}}</td>
             <td (click) = "displayDetails(customer)">{{customer.nationality}}</td>
-            <td *ngIf="checkAssignedTo(customer)"><button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" (click) = "assignToUser(customer)">Assign to Me</button></td>
-            <td *ngIf="!checkAssignedTo(customer)" (click) = "displayDetails(customer)">{{customer.assignedTo}}</td>
+            
+            <td *ngIf="checkAssignedTo(customer)">
+                      
+            <button href="#myModal" class="trigger-btn" data-toggle="modal" type="button" class="btn btn-info" >Assign To Me</button>
+          <!-- Modal HTML -->
+          <div id="myModal" class="modal fade">
+            <div class="modal-dialog modal-confirm">
+              <div class="modal-content">
+                <div class="modal-header">
+                				
+                  <h4 class="modal-title">Are you sure?</h4>	
+                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                  <p>Do you really want to Assign this task? This process cannot be undone.</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" data-dismiss="modal" class="btn btn-danger" (click) = "assignToUser(customer)">Yes</button>
+                  <button type="button" class="btn btn-info" data-dismiss="modal">No</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <td *ngIf="!checkAssignedTo(customer)" (click) = "displayDetails(customer)">{{customer.assignedTo}}</td>
+
           </tr>
         </tbody>
       </table>
@@ -82,7 +105,32 @@
 <div *ngIf="pos != -1">
   <app-customer-details [selectedCustomer]="selectedCustomer"></app-customer-details>
   <br>
-  <button type="button" class="btn btn-success" (click) = "assignToUser(selectedCustomer)">Assign To Me</button>
+  <span>&nbsp;</span><span>&nbsp;&nbsp;&nbsp;</span>
+  <button href="#myModal" class="trigger-btn" data-toggle="modal" type="button" class="btn btn-success" >Assign To Me</button>
   <span>&nbsp;</span><span>&nbsp;</span>
   <button type="button" class="btn btn-danger" (click) = "goBack()">Back</button>
+
+<!-- Modal HTML -->
+<div id="myModal" class="modal fade">
+	<div class="modal-dialog modal-confirm">
+		<div class="modal-content">
+			<div class="modal-header ">
+      	
+				<h4 class="modal-title">Are you sure?</h4>	
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			</div>
+			<div class="modal-body">
+				<p>Do you really want to Assign this task? This process cannot be undone.</p>
+			</div>
+			<div class="modal-footer">
+        <button type="button" data-dismiss="modal" class="btn btn-danger" (click) = "assignToUser(selectedCustomer)">Yes</button>
+				<button type="button" class="btn btn-info" data-dismiss="modal">No</button>
+			</div>
+		</div>
+	</div>
+</div>  
 </div>
+
+
+
+
