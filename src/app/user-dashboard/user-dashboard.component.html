@@ -1,88 +1,24 @@
 <app-navbar></app-navbar>
-<!--The content below is only a placeholder and can be replaced.-->
-<div *ngIf = "pos == -1">
-  <div class="container" *ngIf="!showMyActivities">
-    <br>
-    <div>
-      <h4 class="text-info">List Of Dormant Accounts</h4>
-      <div>&nbsp;</div>
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Contact No.</th>
-            <th>Email</th>
-            <th>Gender</th>
-            <th>Nationality</th>
-            <th>Assigned to</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let customer of customers | paginate: { itemsPerPage: count, currentPage: p }">
-            <td (click) = "displayDetails(customer)">{{customer.id}}</td>
-            <td (click) = "displayDetails(customer)">{{customer.name}}</td>
-            <td (click) = "displayDetails(customer)">{{customer.contactNo}}</td>
-            <td (click) = "displayDetails(customer)">{{customer.email}}</td>
-            <td (click) = "displayDetails(customer)">{{customer.gender}}</td>
-            <td (click) = "displayDetails(customer)">{{customer.nationality}}</td>
-            <td *ngIf="checkAssignedTo(customer)"><button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" (click) = "assignToUser(customer)">Assign to Me</button></td>
-            <td *ngIf="!checkAssignedTo(customer)" (click) = "displayDetails(customer)">{{customer.assignedTo}}</td>
-          </tr>
-        </tbody>
-      </table>
-  </div>
-  
-    <!--Including the pagination control.-->
-  <div class="text-right">
-      <pagination-controls (pageChange)="p = $event"></pagination-controls>
-  </div>
-  
-    <br>
-    <button type="button" class="btn btn-success" (click)="showAssignedToMe()">Show assigned to me</button>
-  </div>
-  <div class="container" *ngIf="showMyActivities">
-    <br>
-    <div>
-      <h4 class="text-info">My Open Activities</h4>
-      <div>&nbsp;</div>
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Contact No.</th>
-            <th>Email</th>
-            <th>Gender</th>
-            <th>Nationality</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let customer of myCustomers | paginate: { itemsPerPage: count1, currentPage: p1 }">
-            <td (click) = "displayDetails(customer)">{{customer.id}}</td>
-            <td (click) = "displayDetails(customer)">{{customer.name}}</td>
-            <td (click) = "displayDetails(customer)">{{customer.contactNo}}</td>
-            <td (click) = "displayDetails(customer)">{{customer.email}}</td>
-            <td (click) = "displayDetails(customer)">{{customer.gender}}</td>
-            <td (click) = "displayDetails(customer)">{{customer.nationality}}</td>
-           </tr>
-        </tbody>
-      </table>
-  </div>
-  
-  <!--Including the pagination control.-->
-  <div class="text-right">
-      <pagination-controls (pageChange)="p1 = $event"></pagination-controls>
-  </div>
-  
-    <br>
-    <button type="button" class="btn btn-danger" (click)="showAllActivities()">Back</button>
-  </div>
+<div class = "container-fluid text-center">
+    <h4>Customer Information</h4>
 </div>
-<div *ngIf="pos != -1">
-  <app-customer-details [selectedCustomer]="selectedCustomer"></app-customer-details>
-  <br>
-  <button type="button" class="btn btn-success" (click) = "assignToUser(selectedCustomer)">Assign To Me</button>
-  <span>&nbsp;</span><span>&nbsp;</span>
-  <button type="button" class="btn btn-danger" (click) = "goBack()">Back</button>
-</div>
+<table class="table table-">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Contact No.</th>
+        <th>Assigned To</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let customer of customers; let i = index">
+        <td>{{i + 1}}</td>
+        <td>{{customer.name}}</td>
+        <td>{{customer.email}}</td>
+        <td>{{customer.contactNo}}</td>
+        <td>{{customer.assignedTo}}</td>
+      </tr>
+    </tbody>
+</table>

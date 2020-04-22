@@ -1,14 +1,9 @@
-import { Account } from './account';
-
 export class Customer {
-    id : number;
     name : string;
-    contactNo : number;
     email : string;
-    gender : string;
-    nationality : string;
+    contactNo : number;
     assignedTo : string;
-    account : Account;
+
     // constructor(name : string, email : string, contactNo : number, assignedTo : string) {
     //     this.name = name;
     //     this.email = email;

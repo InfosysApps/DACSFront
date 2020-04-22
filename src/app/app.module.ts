@@ -14,8 +14,7 @@ import { StorageServiceModule } from 'ngx-webstorage-service';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import {NgxPaginationModule} from 'ngx-pagination';
-import { CustomerDetailsComponent } from './user-dashboard/customer-details/customer-details.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +24,7 @@ import { CustomerDetailsComponent } from './user-dashboard/customer-details/cust
     NotFoundComponent,
     UserDashboardComponent,
     NavbarComponent,
-    CustomerDetailsComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +33,6 @@ import { CustomerDetailsComponent } from './user-dashboard/customer-details/cust
     ReactiveFormsModule,
     HttpClientModule,
     StorageServiceModule,
-    NgxPaginationModule,
   ],
   providers: [AuthService, 
     {
