@@ -14,8 +14,13 @@ import { StorageServiceModule } from 'ngx-webstorage-service';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { AdminComponent } from './admin/admin.component';
-
+import {NgxPaginationModule} from 'ngx-pagination';
+import { CustomerDetailsComponent } from './user-dashboard/customer-details/customer-details.component';
+// import { DormantAccountsComponent } from './user-dashboard/dormant-accounts/dormant-accounts.component';
+// import { UserActivitiesComponent } from './user-dashboard/user-activities/user-activities.component';
+import { CustomerFeedbackComponent } from './user-dashboard/customer-feedback/customer-feedback.component';
+import {AdminComponent} from './admin/admin.component';
+import {AdminDetailsComponent} from './admin/admin-details.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +29,12 @@ import { AdminComponent } from './admin/admin.component';
     NotFoundComponent,
     UserDashboardComponent,
     NavbarComponent,
+    CustomerDetailsComponent,
+    // DormantAccountsComponent,
+    // UserActivitiesComponent,
+    CustomerFeedbackComponent,
     AdminComponent,
+    AdminDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +43,7 @@ import { AdminComponent } from './admin/admin.component';
     ReactiveFormsModule,
     HttpClientModule,
     StorageServiceModule,
+    NgxPaginationModule,
   ],
   providers: [AuthService, 
     {

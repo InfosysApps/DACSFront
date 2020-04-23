@@ -1,6 +1,4 @@
-import { Account } from './account';
-
-export class Customer {
+export class Admin  {
     id : number;
     name : string;
     contactNo : number;

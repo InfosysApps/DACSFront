@@ -30,6 +30,7 @@
     right: 0;
 }	
 .form-control, .login-btn {
+    min-width: 50px;
     min-height: 38px;
     border-radius: 2px;
 }
@@ -42,7 +43,7 @@
 }
 .social-btn .btn {
     border: none;
-    margin: 10px 3px 0;
+    margin: 10px 10px 10px;
     opacity: 1;
 }
 .social-btn .btn:hover {
