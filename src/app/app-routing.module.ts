@@ -8,6 +8,7 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
 import { AccessGuardService } from './services/access-guard.service';
 import { CustomerDetailsComponent } from './user-dashboard/customer-details/customer-details.component';
 import { CustomerFeedbackComponent } from './user-dashboard/customer-feedback/customer-feedback.component';
+import { DeckCardComponent } from './deck-card/deck-card.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/Login', pathMatch: 'full'},
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'Signup', component: SignupComponent },
   { path: 'UserDashboard', component: UserDashboardComponent, canActivate:[AccessGuardService]},
   { path: 'Form', component: CustomerFeedbackComponent},
+  { path: 'DeckCard', component: DeckCardComponent},
   { path: '**', component: NotFoundComponent }
 ];
 

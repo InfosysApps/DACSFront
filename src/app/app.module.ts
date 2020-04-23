@@ -19,6 +19,7 @@ import { CustomerDetailsComponent } from './user-dashboard/customer-details/cust
 // import { DormantAccountsComponent } from './user-dashboard/dormant-accounts/dormant-accounts.component';
 // import { UserActivitiesComponent } from './user-dashboard/user-activities/user-activities.component';
 import { CustomerFeedbackComponent } from './user-dashboard/customer-feedback/customer-feedback.component';
+import { DeckCardComponent } from './deck-card/deck-card.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { CustomerFeedbackComponent } from './user-dashboard/customer-feedback/cu
     // DormantAccountsComponent,
     // UserActivitiesComponent,
     CustomerFeedbackComponent,
+    DeckCardComponent,
   ],
   imports: [
     BrowserModule,
