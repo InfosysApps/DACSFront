@@ -25,7 +25,7 @@
         Rajlaxmi nsectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim occaecat veniam. Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non irure adipisicing aliqua ullamco irure incididunt irure non esse consectetur nostrud minim non minim occaecat. Amet duis do nisi duis veniam non est eiusmod tempor incididunt tempor dolor ipsum in qui sit. Exercitation mollit sit culpa nisi culpa non adipisicing reprehenderit do dolore. Duis reprehenderit occaecat anim ullamco ad duis occaecat ex.
         </div>
         <div class="tab-pane fade" id="nav-about" role="tabpanel" aria-labelledby="nav-about-tab">
-          <app-customer-feedback></app-customer-feedback>
+          Customer Feedback
         </div>
       </div>
     
@@ -98,6 +98,7 @@
     <br>
     <button type="button" class="btn btn-success" (click)="showAssignedToMe()">Show assigned to me</button>
   </div>
+  <br>
   <div class="container" *ngIf="showMyActivities">
     <br>
     <div>
@@ -136,34 +137,13 @@
     <button type="button" class="btn btn-danger" (click)="showAllActivities()">Back</button>
   </div>
 </div>
-<div *ngIf="pos != -1">
+<div *ngIf="pos != -1" >
   <app-customer-details [selectedCustomer]="selectedCustomer"></app-customer-details>
+  <app-customer-feedback></app-customer-feedback>
+  <br><br>
   <span>&nbsp;</span><span>&nbsp;&nbsp;&nbsp;</span>
-  <button href="#myModal" class="trigger-btn" data-toggle="modal" type="button" class="btn btn-success" >Assign To Me</button>
-  <span>&nbsp;</span><span>&nbsp;</span>
   <button type="button" class="btn btn-danger" (click) = "goBack()">Back</button>
   <br><br>
-
-  <!-- Modal HTML -->
-  <div id="myModal" class="modal fade">
-    <div class="modal-dialog modal-confirm">
-      <div class="modal-content">
-        <div class="modal-header ">
-          
-          <h4 class="modal-title">Are you sure?</h4>	
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        </div>
-        <div class="modal-body">
-          <p>Do you really want To Assign this task to yourself?</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" data-dismiss="modal" class="btn btn-danger" (click) = "assignToUser(selectedCustomer)">Yes</button>
-          <button type="button" class="btn btn-info" data-dismiss="modal">No</button>
-        </div>
-      </div>
-    </div>
-  </div>
   <br>
-
   <br>
 </div>

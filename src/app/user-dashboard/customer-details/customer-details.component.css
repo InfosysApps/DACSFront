@@ -1,5 +1,5 @@
 .form-style{
-	max-width: 98%;
+	max-width: 70%;
 	background: #FAFAFA;
 	padding: 15px;
 	margin: 50px auto;
@@ -8,6 +8,3 @@
     border: 3px solid #305A72;
 }
 
-.customer-details {
-	width: 60%
-}
