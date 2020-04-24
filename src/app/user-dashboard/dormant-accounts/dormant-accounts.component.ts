@@ -1,28 +1,26 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import { Customer } from 'src/app/models/customer';
+import { Router } from '@angular/router';
 import { Account } from 'src/app/models/account';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @Component({
-  selector: 'app-customer-details',
-  templateUrl: './customer-details.component.html',
-  styleUrls: ['./customer-details.component.css']
+  selector: 'app-dormant-accounts',
+  templateUrl: './dormant-accounts.component.html',
+  styleUrls: ['./dormant-accounts.component.css']
 })
-export class CustomerDetailsComponent implements OnInit {
+export class DormantAccountsComponent implements OnInit {
 
-  selectedCustomer : Customer;
-  id : number;
+  p2: number = 1;
+  count2: number = 5;
   customersdata = [];
   customers : Customer[] = [];
 
-  constructor(private router : Router, private route : ActivatedRoute) { }
+  constructor(private router : Router) { }
 
   ngOnInit(): void {
     this.initializeCustomerData();
     this.getCustomers();
-    this.route.params.subscribe(param => this.id = param['id'])
-    console.log(this.id);
-    this.getSelectedCustomer(this.id);
   }
 
   initializeCustomerData() {
@@ -68,15 +66,30 @@ export class CustomerDetailsComponent implements OnInit {
     }
   }
 
-  getSelectedCustomer(id : number) {
-    for (let customer of this.customers) {
-      if(customer.id == id) {
-        this.selectedCustomer = customer;
-      }
+  displayDetails(customer : Customer) {
+    let id : number;
+    id = customer.id;
+    this.router.navigate(['/Details', id]);
+  }
+
+  checkAssignedTo(customer : Customer) {
+    let assignedTo : string;
+    assignedTo = customer.assignedTo;
+    if (assignedTo == "Unassigned") {
+      return true;
+    } else {
+      return false;
     }
   }
 
-  goBack() {
-    this.router.navigate(['/UserDashboard']);
+  assignToUser(customer : Customer) {
+    console.log("Inside assignToUser");
+    let id : number = customer.id;
+    console.log(id);
+    for (let customerI of this.customers) {
+      if (customerI.id == customer.id) {
+        customerI.assignedTo = "Komal Kadam";
+      }
+    }
   }
 }

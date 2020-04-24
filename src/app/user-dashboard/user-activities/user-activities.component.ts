@@ -1,28 +1,27 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import { Customer } from 'src/app/models/customer';
+import { Router } from '@angular/router';
 import { Account } from 'src/app/models/account';
 
 @Component({
-  selector: 'app-customer-details',
-  templateUrl: './customer-details.component.html',
-  styleUrls: ['./customer-details.component.css']
+  selector: 'app-user-activities',
+  templateUrl: './user-activities.component.html',
+  styleUrls: ['./user-activities.component.css']
 })
-export class CustomerDetailsComponent implements OnInit {
+export class UserActivitiesComponent implements OnInit {
 
-  selectedCustomer : Customer;
-  id : number;
+  p : number = 1;
+  count : number = 5;
   customersdata = [];
   customers : Customer[] = [];
+  myCustomers : Customer[] = [];
 
-  constructor(private router : Router, private route : ActivatedRoute) { }
+  constructor(private router : Router) { }
 
   ngOnInit(): void {
     this.initializeCustomerData();
     this.getCustomers();
-    this.route.params.subscribe(param => this.id = param['id'])
-    console.log(this.id);
-    this.getSelectedCustomer(this.id);
+    this.getMyCustomers();
   }
 
   initializeCustomerData() {
@@ -68,15 +67,17 @@ export class CustomerDetailsComponent implements OnInit {
     }
   }
 
-  getSelectedCustomer(id : number) {
+  getMyCustomers() {
     for (let customer of this.customers) {
-      if(customer.id == id) {
-        this.selectedCustomer = customer;
+      if (customer.assignedTo == "Sachin Kothavade") {
+        this.myCustomers.push(customer);
       }
     }
   }
 
-  goBack() {
-    this.router.navigate(['/UserDashboard']);
+  displayDetails(customer : Customer) {
+    let id : number;
+    id = customer.id;
+    this.router.navigate(['/Details', id]);
   }
 }

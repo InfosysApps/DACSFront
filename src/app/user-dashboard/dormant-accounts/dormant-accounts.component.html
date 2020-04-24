@@ -1,0 +1,57 @@
+<div>
+    <h4 class="text-info text-center">List Of Dormant Accounts</h4>
+    <div>&nbsp;</div>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Contact No.</th>
+          <th>Email</th>
+          <th>Gender</th>
+          <th>Nationality</th>
+          <th>Assigned to</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let customer of customers | paginate: { itemsPerPage: count2, currentPage: p2 }">
+          <td (click) = "displayDetails(customer)">{{customer.id}}</td>
+          <td (click) = "displayDetails(customer)">{{customer.name}}</td>
+          <td (click) = "displayDetails(customer)">{{customer.contactNo}}</td>
+          <td (click) = "displayDetails(customer)">{{customer.email}}</td>
+          <td (click) = "displayDetails(customer)">{{customer.gender}}</td>
+          <td (click) = "displayDetails(customer)">{{customer.nationality}}</td>
+          
+          <td *ngIf="checkAssignedTo(customer)">
+                    
+          <button href="#myModal" class="trigger-btn" data-toggle="modal" type="button" class="btn btn-info" >Assign To Me</button>
+        <!-- Modal HTML -->
+        <div id="myModal" class="modal fade">
+          <div class="modal-dialog modal-confirm">
+            <div class="modal-content">
+              <div class="modal-header">
+                              
+                <h4 class="modal-title">Are you sure?</h4>	
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              </div>
+              <div class="modal-body">
+                <p>Do you really want to Assign this task? This process cannot be undone.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-danger" (click) = "assignToUser(customer)">Yes</button>
+                <button type="button" class="btn btn-info" data-dismiss="modal">No</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <td *ngIf="!checkAssignedTo(customer)" (click) = "displayDetails(customer)">{{customer.assignedTo}}</td>
+
+        </tr>
+      </tbody>
+    </table>
+</div>
+
+  <!--Including the pagination control.-->
+<div class="text-right">
+    <pagination-controls (pageChange)="p2 = $event"></pagination-controls>
+</div>

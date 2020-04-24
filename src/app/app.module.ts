@@ -16,8 +16,8 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
 import { NavbarComponent } from './navbar/navbar.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { CustomerDetailsComponent } from './user-dashboard/customer-details/customer-details.component';
-// import { DormantAccountsComponent } from './user-dashboard/dormant-accounts/dormant-accounts.component';
-// import { UserActivitiesComponent } from './user-dashboard/user-activities/user-activities.component';
+import { DormantAccountsComponent } from './user-dashboard/dormant-accounts/dormant-accounts.component';
+import { UserActivitiesComponent } from './user-dashboard/user-activities/user-activities.component';
 import { CustomerFeedbackComponent } from './user-dashboard/customer-feedback/customer-feedback.component';
 import { DeckCardComponent } from './deck-card/deck-card.component';
 
@@ -30,8 +30,8 @@ import { DeckCardComponent } from './deck-card/deck-card.component';
     UserDashboardComponent,
     NavbarComponent,
     CustomerDetailsComponent,
-    // DormantAccountsComponent,
-    // UserActivitiesComponent,
+    DormantAccountsComponent,
+    UserActivitiesComponent,
     CustomerFeedbackComponent,
     DeckCardComponent,
   ],

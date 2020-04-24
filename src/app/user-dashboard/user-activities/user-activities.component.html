@@ -1,0 +1,31 @@
+<div>
+    <h4 class="text-info text-center">My Open Activities</h4>
+    <div>&nbsp;</div>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Contact No.</th>
+          <th>Email</th>
+          <th>Gender</th>
+          <th>Nationality</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let customer of myCustomers | paginate: { itemsPerPage: count, currentPage: p }">
+          <td (click) = "displayDetails(customer)">{{customer.id}}</td>
+          <td (click) = "displayDetails(customer)">{{customer.name}}</td>
+          <td (click) = "displayDetails(customer)">{{customer.contactNo}}</td>
+          <td (click) = "displayDetails(customer)">{{customer.email}}</td>
+          <td (click) = "displayDetails(customer)">{{customer.gender}}</td>
+          <td (click) = "displayDetails(customer)">{{customer.nationality}}</td>
+         </tr>
+      </tbody>
+    </table>
+</div>
+
+<!--Including the pagination control.-->
+<div class="text-right">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
