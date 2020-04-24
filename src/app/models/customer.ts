@@ -3,7 +3,7 @@ import { Account } from './account';
 export class Customer {
     id : number;
     name : string;
-    contactNo : number;
+    contactNo : string;
     email : string;
     gender : string;
     nationality : string;

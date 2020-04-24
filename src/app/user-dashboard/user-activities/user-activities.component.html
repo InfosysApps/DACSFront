@@ -13,7 +13,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let customer of myCustomers | paginate: { itemsPerPage: count, currentPage: p }">
+        <tr *ngFor="let customer of myCustomers | paginate: { itemsPerPage: count1, currentPage: p1 }">
           <td (click) = "displayDetails(customer)">{{customer.id}}</td>
           <td (click) = "displayDetails(customer)">{{customer.name}}</td>
           <td (click) = "displayDetails(customer)">{{customer.contactNo}}</td>
@@ -27,5 +27,5 @@
 
 <!--Including the pagination control.-->
 <div class="text-right">
-    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    <pagination-controls (pageChange)="p1 = $event"></pagination-controls>
 </div>
