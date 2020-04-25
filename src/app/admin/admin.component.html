@@ -51,11 +51,11 @@ Comment : <input type="text" aria-setsize="150"  style="height: 150px; width: 30
 
 
     
-    <button type="submit"  style="margin-left: 100px ;" class="btn btn-primary login-btn">Reject</button>
+    <button type="submit"  style="margin-left: 100px ;" class="btn btn-primary login-btn" (click) ="reject()">Reject</button>
 </div>
 
 
-<div *ngIf="pos != -1">
+<!--<div *ngIf="pos != -1">
   <app-admin-details [checkedAdmins]="checkedAdmins"></app-admin-details>
   <br>
   <span>&nbsp;</span><span>&nbsp;&nbsp;&nbsp;</span>
@@ -63,4 +63,4 @@ Comment : <input type="text" aria-setsize="150"  style="height: 150px; width: 30
   <span>&nbsp;</span><span>&nbsp;</span>
   <button type="button" class="btn btn-danger" (click) = "goBack()">Back</button>
 
-
+-->

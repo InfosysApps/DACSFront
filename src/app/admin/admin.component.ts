@@ -25,6 +25,7 @@ export class AdminComponent  {
   count1: number = 5;
   pos: number = -1;
   showMyActivities : boolean = false;
+  count2 :number = 0;
 
   ngOnInit(): void {
     console.log('Application loaded. Initializing data.');
@@ -96,12 +97,38 @@ export class AdminComponent  {
 
   approve(){
     
-    this.pos = 1;
+    this.pos  = 0;
     this.checkedAdmins = this.checkedAdmins;
-    
+    for (let admin of this.checkedAdmins) {
+
+       this.pos=this.pos+1;
+
+    }
    // this.router.navigate(['/ApprovedDetails',this.checkedAdmins]);
-    
+   
+    alert(this.pos+" records approved successfully");
+    this.checkedAdmins=[];
+    this.pos=-1;
   }
+
+
+  reject(){
+    
+    this.pos  = 0;
+    this.checkedAdmins = this.checkedAdmins;
+    for (let admin of this.checkedAdmins) {
+
+       this.pos=this.pos+1;
+
+    }
+   // this.router.navigate(['/ApprovedDetails',this.checkedAdmins]);
+   
+    alert(this.pos+" records rejected successfully");
+    this.checkedAdmins=[];
+    this.pos=-1;
+  }
+
+
   goBack() {
     this.pos = -1;
   }
