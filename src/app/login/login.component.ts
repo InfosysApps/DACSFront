@@ -39,7 +39,8 @@ export class LoginComponent implements OnInit {
     return this.loginForm.controls;
   }
   
-  public LoginSubmit(form) : void {    
+  public LoginSubmit(form) : void {  
+    debugger;  
     if(this.loginForm.valid)
     {
       let loginCreds = { username : this.loginForm.value.username, password : this.loginForm.value.password};
