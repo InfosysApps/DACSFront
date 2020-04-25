@@ -17,6 +17,7 @@ export class AdminComponent  {
   admindata = [];
   admins : Admin[] = [];
   myAdmins : Admin[] = [];
+  checkedAdmins:Admin[]=[];
   selectedAdmin : Admin;
   p: number = 1;
   count: number = 5;
@@ -94,9 +95,11 @@ export class AdminComponent  {
   }
 
   approve(){
-
-    alert("Selected Record Approved successfully");
-    //this.router.navigate(['/ApprovedDetails']);
+    
+    this.pos = 1;
+    this.checkedAdmins = this.checkedAdmins;
+    
+   // this.router.navigate(['/ApprovedDetails',this.checkedAdmins]);
     
   }
   goBack() {
@@ -120,6 +123,13 @@ export class AdminComponent  {
         admin.assignedTo = "Komal Kadam";
       }
     }
+  }
+
+  onChange(selectedAdmin: Admin ) {
+
+    this.checkedAdmins.push(selectedAdmin);
+    //alert(selectedAdmin.name)
+
   }
 
   showAssignedToMe() {

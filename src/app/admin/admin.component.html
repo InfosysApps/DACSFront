@@ -29,26 +29,9 @@
             
             <td >
                       
-            <button href="#myModal" class="trigger-btn" data-toggle="modal" type="button" class="btn btn-info" >Select Row</button>
+            <input type="checkbox"  name="checkbox" (change)="onChange(admin)">
           <!-- Modal HTML -->
-          <div id="myModal" class="modal fade">
-            <div class="modal-dialog modal-confirm">
-              <div class="modal-content">
-                <div class="modal-header">
-                				
-                  <h4 class="modal-title">Are you sure?</h4>	
-                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                </div>
-                <div class="modal-body">
-                  <p>Do you really want to Select this task? This process cannot be undone.</p>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" data-dismiss="modal" class="btn btn-danger" (click) = "selectToUser(admin)">Yes</button>
-                  <button type="button" class="btn btn-info" data-dismiss="modal">No</button>
-                </div>
-              </div>
-            </div>
-          </div>
+          </td>
           
           </tr>
         </tbody>
@@ -73,7 +56,7 @@ Comment : <input type="text" aria-setsize="150"  style="height: 150px; width: 30
 
 
 <div *ngIf="pos != -1">
-  <app-admin-details [selectedAdmin]="selectedAdmin"></app-admin-details>
+  <app-admin-details [checkedAdmins]="checkedAdmins"></app-admin-details>
   <br>
   <span>&nbsp;</span><span>&nbsp;&nbsp;&nbsp;</span>
   <button href="#myModal" class="trigger-btn" data-toggle="modal" type="button" class="btn btn-success" >Assign To Me</button>
