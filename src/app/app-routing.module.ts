@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'Signup', component: SignupComponent },
   { path: 'UserDashboard', component: UserDashboardComponent, canActivate:[AccessGuardService]},
   { path: 'Form', component: CustomerFeedbackComponent},
-  { path: 'AdminComponent', component: AdminComponent},
+  { path: 'AdminComponent', component: AdminComponent,canActivate:[AccessGuardService]},
   { path: 'ApprovedDetails', component: AdminDetailsComponent},
   { path: '**', component: NotFoundComponent }
 ];

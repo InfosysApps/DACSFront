@@ -1,6 +1,6 @@
 <br>
     <div>
-<h4 class="text-info text-center">{{status}} Admin Information</h4>
+<h4 class="text-info text-center">Selected Rows Admin Information {{status}} Successfully</h4>
 <table class="table table-bordered">
   <thead>
     <tr>
@@ -10,24 +10,20 @@
       <th>Email</th>
       <th>Gender</th>
       <th>Nationality</th>
-      <th></th>
+      
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let admin of selectedadminstoApprove ">
       <td >{{admin.id}}</td>
       <td >{{admin.name}}</td>
-      <td >{{admin.contactNo}}</td>
+      <td >{{admin.phoneno}}</td>
       <td>{{admin.email}}</td>
       <td >{{admin.gender}}</td>
       <td >{{admin.nationality}}</td>
-      
-      <td >
-                
-      
+     
     <!-- Modal HTML -->
-    </td>
-    
+   
     </tr>
   </tbody>
 </table>

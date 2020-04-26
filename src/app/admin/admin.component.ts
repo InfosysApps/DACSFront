@@ -4,6 +4,7 @@ import { Admin } from '../models/admin';
 import { Account } from '../models/account';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-admin',
@@ -11,6 +12,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent  {
+  adminForm : FormGroup;
   title = 'Angular Pagination Tutorial';
   admindata = [];
   admins : Admin[] = [];
@@ -25,16 +27,27 @@ export class AdminComponent  {
   pos: number = -1;
   showMyActivities : boolean = false;
   count2 :number = 0;
-
+  comment :string="";
+   
   ngOnInit(): void {
+   
     console.log('Application loaded. Initializing data.');
     this.initializeAdminData();
     this.getAdmins();
-    this.getMyAdmins();
+    
+    this.adminForm = this._FormBuilder.group({
+      comment: new FormControl('', [Validators.required]),
+
+    },
+    { updateOn: "blur" });
+
   }
 
-  constructor(private router : Router) {}
-
+  constructor(private router : Router,private _FormBuilder : FormBuilder,) {}
+  get f(){
+    
+    return this.adminForm.controls;
+  }
   initializeAdminData() {
     this.admindata = [
       { 'id': 1, 'name': 'Clare Cornau', 'phoneno': '(815) 6180492', 'email': 'ccornau0@bigcartel.com', 'gender': 'Female', 'nationality': 'Somalia', 'accountNo': 1001, 'accountType': 'Saving', 'assignedTo': 'Amit Patange' },
@@ -78,24 +91,26 @@ export class AdminComponent  {
     }
   }
 
-  getMyAdmins() {
-    for (let admin of this.admins) {
-      if (admin.assignedTo == "Sachin Kothavade") {
-        this.myAdmins.push(admin);
-      }
-    }
-  }
+  
 
   displayDetails(admin : Admin) {
     console.log(admin.id);
-    console.log("Rajesh");
+    console.log("Rama");
     this.pos = admin.id;
     this.selectedAdmin = admin;
     // this.router.navigate(['/Details']);
   }
 
   approve(){
+
     
+     if(this.comment==""){
+    alert("Comment is Required");
+     }
+    else if(this.checkedAdmins.length==0){
+       alert("please select atleast 1 record to approve or reject")
+    }else{
+
     this.pos  = 0;
     this.checkedAdmins = this.checkedAdmins;
 
@@ -115,6 +130,7 @@ export class AdminComponent  {
     this.checkedAdmins=[];
     this.pos=-1;
     this.router.navigate(['/ApprovedDetails'],{ queryParams: params });
+  }
    
     //alert(this.pos+" records approved successfully");
   
@@ -122,7 +138,12 @@ export class AdminComponent  {
 
 
   reject(){
-    
+    if(this.comment==""){
+      alert("Comment is Required");
+    }
+    else if(this.checkedAdmins.length==0){
+      alert("please select atleast 1 record to approve or reject")
+   }else{
     this.pos  = 0;
     this.checkedAdmins = this.checkedAdmins;
     for (let admin of this.checkedAdmins) {
@@ -136,11 +157,11 @@ export class AdminComponent  {
        status:"Rejected"
 
     }
-
+ 
     this.checkedAdmins=[];
     this.pos=-1;
     this.router.navigate(['/ApprovedDetails'],{ queryParams: params });
-   
+  }
     //alert(this.pos+" records approved successfully");
     
   }
@@ -150,24 +171,7 @@ export class AdminComponent  {
     this.pos = -1;
   }
 
-  checkAssignedTo(admin : Admin) {
-    let assignedTo : string;
-    assignedTo = admin.assignedTo;
-    if (assignedTo == "Unassigned") {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-  selectToUser(selectedAdmin : Admin) {
-    let id : number = selectedAdmin.id;
-    for (let admin of this.admins) {
-      if (admin.id == selectedAdmin.id) {
-        admin.assignedTo = "Komal Kadam";
-      }
-    }
-  }
+  
 
   onChange(selectedAdmin: Admin ) {
 
@@ -176,9 +180,8 @@ export class AdminComponent  {
 
   }
 
-  showAssignedToMe() {
-    this.showMyActivities = true;
-  }
+  
+  
 
   showAllActivities() {
     this.router.navigate(['/AdminComponent']);
