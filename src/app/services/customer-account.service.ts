@@ -36,12 +36,11 @@ function sort(customers: Customer[], column: string, direction: string): Custome
 
 function matches(customer: Customer, term: string, pipe: PipeTransform) {
   return pipe.transform(customer.id).includes(term)
-    || customer.name.toLowerCase().includes(term)
+    || customer.name.includes(term)
     || customer.contactNo.includes(term)
-    || customer.email.toLowerCase().includes(term)
-    || customer.gender.toLowerCase().includes(term)
-    || customer.nationality.toLowerCase().includes(term)
-    || customer.assignedTo.toLowerCase().includes(term);
+    || customer.email.includes(term)
+    || customer.gender.includes(term)
+    || customer.assignedTo.includes(term);
 }
 
 @Injectable({
@@ -159,7 +158,7 @@ export class CustomerAccountService {
       customer.contactNo = customerData.phoneno;
       customer.email = customerData.email;
       customer.gender = customerData.gender;
-      customer.nationality = customerData.nationality;
+      // customer.nationality = customerData.nationality;
       customer.assignedTo = customerData.assignedTo;
       let account : Account = new Account();
       account.accountNumber = customerData.accountNo;

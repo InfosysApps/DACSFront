@@ -13,7 +13,6 @@
           <th scope="col" sortable="contactNo" (sort)="onSort($event)">Contact No.</th>
           <th scope="col" sortable="email" (sort)="onSort($event)">Email</th>
           <th scope="col" sortable="gender" (sort)="onSort($event)">Gender</th>
-          <th scope="col" sortable="nationality" (sort)="onSort($event)">Nationality</th>
           <th scope="col" sortable="assignedTo" (sort)="onSort($event)">Assigned to</th>
         </tr>
       </thead>
@@ -24,7 +23,6 @@
           <td (click) = "displayDetails(customer)"><ngb-highlight [result]="customer.contactNo" [term]="customerAccountService.searchTerm"></ngb-highlight></td>
           <td (click) = "displayDetails(customer)"><ngb-highlight [result]="customer.email" [term]="customerAccountService.searchTerm"></ngb-highlight></td>
           <td (click) = "displayDetails(customer)"><ngb-highlight [result]="customer.gender" [term]="customerAccountService.searchTerm"></ngb-highlight></td>
-          <td (click) = "displayDetails(customer)"><ngb-highlight [result]="customer.nationality" [term]="customerAccountService.searchTerm"></ngb-highlight></td>
           
           <td *ngIf="checkAssignedTo(customer)">
                     
@@ -64,8 +62,3 @@
       </select>
     </div>
 </div>
-
-  <!--Including the pagination control.-->
-<!-- <div class="text-right">
-    <pagination-controls (pageChange)="p2 = $event"></pagination-controls>
-</div> -->

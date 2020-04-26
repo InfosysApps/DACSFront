@@ -14,8 +14,6 @@ import { SortableDirective, SortEvent } from 'src/app/models/sortable.directive'
 })
 export class DormantAccountsComponent implements OnInit {
 
-  p2: number = 1;
-  count2: number = 5;
   customers : Customer[] = [];
 
   customers$: Observable<Customer[]>;
