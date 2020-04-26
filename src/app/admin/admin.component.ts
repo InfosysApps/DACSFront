@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-
-
-
-
 import {NgxPaginationModule} from 'ngx-pagination';
 import { Admin } from '../models/admin';
 import { Account } from '../models/account';
 import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
@@ -18,6 +16,7 @@ export class AdminComponent  {
   admins : Admin[] = [];
   myAdmins : Admin[] = [];
   checkedAdmins:Admin[]=[];
+  approveOrReject:String[]=[];
   selectedAdmin : Admin;
   p: number = 1;
   count: number = 5;
@@ -99,16 +98,26 @@ export class AdminComponent  {
     
     this.pos  = 0;
     this.checkedAdmins = this.checkedAdmins;
-    for (let admin of this.checkedAdmins) {
 
+    
+    for (let admin of this.checkedAdmins) {
+      this.approveOrReject.push(admin.id.toString())
        this.pos=this.pos+1;
 
     }
-   // this.router.navigate(['/ApprovedDetails',this.checkedAdmins]);
-   
-    alert(this.pos+" records approved successfully");
+    let params = {
+     
+       ids:this.approveOrReject,
+       status:"Approved"
+
+    }
+
     this.checkedAdmins=[];
     this.pos=-1;
+    this.router.navigate(['/ApprovedDetails'],{ queryParams: params });
+   
+    //alert(this.pos+" records approved successfully");
+  
   }
 
 
@@ -117,15 +126,23 @@ export class AdminComponent  {
     this.pos  = 0;
     this.checkedAdmins = this.checkedAdmins;
     for (let admin of this.checkedAdmins) {
-
+      this.approveOrReject.push(admin.id.toString())
        this.pos=this.pos+1;
 
     }
-   // this.router.navigate(['/ApprovedDetails',this.checkedAdmins]);
-   
-    alert(this.pos+" records rejected successfully");
+    let params = {
+     
+       ids:this.approveOrReject,
+       status:"Rejected"
+
+    }
+
     this.checkedAdmins=[];
     this.pos=-1;
+    this.router.navigate(['/ApprovedDetails'],{ queryParams: params });
+   
+    //alert(this.pos+" records approved successfully");
+    
   }
 
 
@@ -164,6 +181,6 @@ export class AdminComponent  {
   }
 
   showAllActivities() {
-    this.showMyActivities = false;
+    this.router.navigate(['/AdminComponent']);
   }
 }

@@ -1,6 +1,6 @@
 <br>
     <div>
-<h4 class="text-info text-center">Admin Information</h4>
+<h4 class="text-info text-center">{{status}} Admin Information</h4>
 <table class="table table-bordered">
   <thead>
     <tr>
@@ -14,7 +14,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let admin of checkedAdmins ">
+    <tr *ngFor="let admin of selectedadminstoApprove ">
       <td >{{admin.id}}</td>
       <td >{{admin.name}}</td>
       <td >{{admin.contactNo}}</td>
@@ -31,4 +31,8 @@
     </tr>
   </tbody>
 </table>
+<div>
+
+  <button type="submit"  style="margin-left: 100px ;" class="btn btn-primary login-btn" (click)="showAllActivities()">Back</button>
+</div>
 </div>
