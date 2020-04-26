@@ -14,7 +14,7 @@ import { StorageServiceModule } from 'ngx-webstorage-service';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import {NgxPaginationModule} from 'ngx-pagination';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { CustomerDetailsComponent } from './user-dashboard/customer-details/customer-details.component';
 import { DormantAccountsComponent } from './user-dashboard/dormant-accounts/dormant-accounts.component';
 import { UserActivitiesComponent } from './user-dashboard/user-activities/user-activities.component';
@@ -23,6 +23,8 @@ import { DeckCardComponent } from './deck-card/deck-card.component';
 import { SortableDirective } from './models/sortable.directive';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DecimalPipe } from '@angular/common';
+import { AdminComponent } from './admin/admin.component';
+import { AdminDetailsComponent } from './admin/admin-details.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { DecimalPipe } from '@angular/common';
     CustomerFeedbackComponent,
     DeckCardComponent,
     SortableDirective,
+    AdminComponent,
+    AdminDetailsComponent
   ],
   imports: [
     BrowserModule,

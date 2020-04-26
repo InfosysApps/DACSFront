@@ -1,0 +1,45 @@
+<app-navbar></app-navbar>
+<!--The content below is only a placeholder and can be replaced.-->
+<div *ngIf = "pos == -1">
+  <div class="container" *ngIf="!showMyActivities">
+    <br>
+    <div>
+      <h4 class="text-info">Approve Pane</h4>
+      <div>&nbsp;</div>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Contact No.</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>Nationality</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let admin of admins | paginate: { itemsPerPage: count, currentPage: p }">
+            <td >{{admin.id}}</td>
+            <td >{{admin.name}}</td>
+            <td >{{admin.contactNo}}</td>
+            <td>{{admin.email}}</td>
+            <td >{{admin.gender}}</td>
+            <td >{{admin.nationality}}</td>
+            <td ><input type="checkbox"  name="checkbox" (change)="onChange(admin)"><!-- Modal HTML --></td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+  <div class="text-right">   
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+
+  <div class="form-group">
+    Comment : <input type="text" [(ngModel)]="comment" aria-setsize="150"  style="height: 150px; width: 300px;"/>
+  </div>
+</div>
+<div class="form-group">
+    <button type="submit" style="margin-left: 400px ;" class="btn btn-primary login-btn" (click) ="approve()">Approve </button>          
+    <button type="submit" style="margin-left: 100px ;" class="btn btn-primary login-btn" (click) ="reject()">Reject</button>
+</div>

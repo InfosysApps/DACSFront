@@ -1,0 +1,34 @@
+<br>
+    <div>
+<h4 class="text-info text-center">Selected Rows Admin Information {{status}} Successfully</h4>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Contact No.</th>
+      <th>Email</th>
+      <th>Gender</th>
+      <th>Nationality</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let admin of selectedadminstoApprove ">
+      <td >{{admin.id}}</td>
+      <td >{{admin.name}}</td>
+      <td >{{admin.phoneno}}</td>
+      <td>{{admin.email}}</td>
+      <td >{{admin.gender}}</td>
+      <td >{{admin.nationality}}</td>
+     
+    <!-- Modal HTML -->
+   
+    </tr>
+  </tbody>
+</table>
+<div>
+
+  <button type="submit"  style="margin-left: 100px ;" class="btn btn-primary login-btn" (click)="showAllActivities()">Back</button>
+</div>
+</div>
