@@ -1,57 +1,71 @@
 <div>
     <h4 class="text-info text-center">List Of Dormant Accounts</h4>
     <div>&nbsp;</div>
+    <div class="form-group form-inline">&nbsp;
+      Search: <input class="form-control ml-2" type="text" name="searchTerm" [(ngModel)]="customerAccountService.searchTerm"/>
+      <span class="ml-3" *ngIf="customerAccountService.loading$ | async">Loading...</span>
+    </div>
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th>Id</th>
-          <th>Name</th>
-          <th>Contact No.</th>
-          <th>Email</th>
-          <th>Gender</th>
-          <th>Nationality</th>
-          <th>Assigned to</th>
+          <th scope="col" sortable="id" (sort)="onSort($event)">Id</th>
+          <th scope="col" sortable="name" (sort)="onSort($event)">Name</th>
+          <th scope="col" sortable="contactNo" (sort)="onSort($event)">Contact No.</th>
+          <th scope="col" sortable="email" (sort)="onSort($event)">Email</th>
+          <th scope="col" sortable="gender" (sort)="onSort($event)">Gender</th>
+          <th scope="col" sortable="nationality" (sort)="onSort($event)">Nationality</th>
+          <th scope="col" sortable="assignedTo" (sort)="onSort($event)">Assigned to</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let customer of customers | paginate: { itemsPerPage: count2, currentPage: p2 }">
-          <td (click) = "displayDetails(customer)">{{customer.id}}</td>
-          <td (click) = "displayDetails(customer)">{{customer.name}}</td>
-          <td (click) = "displayDetails(customer)">{{customer.contactNo}}</td>
-          <td (click) = "displayDetails(customer)">{{customer.email}}</td>
-          <td (click) = "displayDetails(customer)">{{customer.gender}}</td>
-          <td (click) = "displayDetails(customer)">{{customer.nationality}}</td>
+        <tr *ngFor="let customer of customers$ | async">
+          <td  scope="row" (click) = "displayDetails(customer)">{{customer.id}}</td>
+          <td (click) = "displayDetails(customer)"><ngb-highlight [result]="customer.name" [term]="customerAccountService.searchTerm"></ngb-highlight></td>
+          <td (click) = "displayDetails(customer)"><ngb-highlight [result]="customer.contactNo" [term]="customerAccountService.searchTerm"></ngb-highlight></td>
+          <td (click) = "displayDetails(customer)"><ngb-highlight [result]="customer.email" [term]="customerAccountService.searchTerm"></ngb-highlight></td>
+          <td (click) = "displayDetails(customer)"><ngb-highlight [result]="customer.gender" [term]="customerAccountService.searchTerm"></ngb-highlight></td>
+          <td (click) = "displayDetails(customer)"><ngb-highlight [result]="customer.nationality" [term]="customerAccountService.searchTerm"></ngb-highlight></td>
           
           <td *ngIf="checkAssignedTo(customer)">
                     
           <button href="#myModal" class="trigger-btn" data-toggle="modal" type="button" class="btn btn-info" >Assign To Me</button>
-        <!-- Modal HTML -->
-        <div id="myModal" class="modal fade">
-          <div class="modal-dialog modal-confirm">
-            <div class="modal-content">
-              <div class="modal-header">
-                              
-                <h4 class="modal-title">Are you sure?</h4>	
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              </div>
-              <div class="modal-body">
-                <p>Do you really want to Assign this task? This process cannot be undone.</p>
-              </div>
-              <div class="modal-footer">
-                <button type="button" data-dismiss="modal" class="btn btn-danger" (click) = "assignToUser(customer)">Yes</button>
-                <button type="button" class="btn btn-info" data-dismiss="modal">No</button>
+          <!-- Modal HTML -->
+          <div id="myModal" class="modal fade">
+            <div class="modal-dialog modal-confirm">
+              <div class="modal-content">
+                <div class="modal-header">
+                                
+                  <h4 class="modal-title">Are you sure?</h4>	
+                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                  <p>Do you really want to Assign this task? This process cannot be undone.</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" data-dismiss="modal" class="btn btn-danger" (click) = "assignToUser(customer)">Yes</button>
+                  <button type="button" class="btn btn-info" data-dismiss="modal">No</button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <td *ngIf="!checkAssignedTo(customer)" (click) = "displayDetails(customer)">{{customer.assignedTo}}</td>
+          <td *ngIf="!checkAssignedTo(customer)" (click) = "displayDetails(customer)"><ngb-highlight [result]="customer.assignedTo" [term]="customerAccountService.searchTerm"></ngb-highlight></td>
 
         </tr>
       </tbody>
     </table>
+    <div class="d-flex justify-content-between p-2">
+      <ngb-pagination
+        [collectionSize]="total$ | async" [(page)]="customerAccountService.page" [pageSize]="customerAccountService.pageSize">
+      </ngb-pagination>
+  
+      <select class="custom-select" style="width: auto" name="pageSize" [(ngModel)]="customerAccountService.pageSize">
+        <option [ngValue]="4">4 items per page</option>
+        <option [ngValue]="5">5 items per page</option>
+      </select>
+    </div>
 </div>
 
   <!--Including the pagination control.-->
-<div class="text-right">
+<!-- <div class="text-right">
     <pagination-controls (pageChange)="p2 = $event"></pagination-controls>
-</div>
+</div> -->

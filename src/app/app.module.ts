@@ -20,6 +20,9 @@ import { DormantAccountsComponent } from './user-dashboard/dormant-accounts/dorm
 import { UserActivitiesComponent } from './user-dashboard/user-activities/user-activities.component';
 import { CustomerFeedbackComponent } from './user-dashboard/customer-feedback/customer-feedback.component';
 import { DeckCardComponent } from './deck-card/deck-card.component';
+import { SortableDirective } from './models/sortable.directive';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DecimalPipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -34,6 +37,7 @@ import { DeckCardComponent } from './deck-card/deck-card.component';
     UserActivitiesComponent,
     CustomerFeedbackComponent,
     DeckCardComponent,
+    SortableDirective,
   ],
   imports: [
     BrowserModule,
@@ -43,13 +47,17 @@ import { DeckCardComponent } from './deck-card/deck-card.component';
     HttpClientModule,
     StorageServiceModule,
     NgxPaginationModule,
+    NgbModule,
   ],
-  providers: [AuthService, 
+  providers: [
+    AuthService, 
+    DecimalPipe,
     {
-    provide:HTTP_INTERCEPTORS,
-    useClass: TokenInterceptorService,
-    multi: true
-  }],
+      provide:HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

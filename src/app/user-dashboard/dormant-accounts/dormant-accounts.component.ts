@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChildren, QueryList } from '@angular/core';
 import { Customer } from 'src/app/models/customer';
 import { Router } from '@angular/router';
 import { Account } from 'src/app/models/account';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { CustomerAccountService } from 'src/app/services/customer-account.service';
+import { Observable } from 'rxjs';
+import { SortableDirective, SortEvent } from 'src/app/models/sortable.directive';
 
 @Component({
   selector: 'app-dormant-accounts',
@@ -16,10 +18,32 @@ export class DormantAccountsComponent implements OnInit {
   count2: number = 5;
   customers : Customer[] = [];
 
-  constructor(private router : Router, private customerAccountService : CustomerAccountService) { }
+  customers$: Observable<Customer[]>;
+  total$: Observable<number>;
+
+  @ViewChildren(SortableDirective) headers: QueryList<SortableDirective>;
+
+  constructor(private router : Router, public customerAccountService : CustomerAccountService) { 
+    this.customers$ = customerAccountService.customers$;
+    this.total$ = customerAccountService.total$;
+  }
 
   ngOnInit(): void {
     this.customers = this.customerAccountService.getCustomers();
+    this.customerAccountService.initializeCustomers(1);
+  }
+
+  onSort({column, direction}: SortEvent) {
+
+    // resetting other headers
+    this.headers.forEach(header => {
+      if (header.sortable !== column) {
+        header.direction = '';
+      }
+    });
+
+    this.customerAccountService.sortColumn = column;
+    this.customerAccountService.sortDirection = direction;
   }
 
   displayDetails(customer : Customer) {
