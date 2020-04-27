@@ -107,22 +107,28 @@ export class AdminComponent  {
      if(this.comment==""){
     alert("Comment is Required");
      }
-    else if(this.checkedAdmins.length==0){
-       alert("please select atleast 1 record to approve or reject")
-    }else{
+    //else if(this.checkedAdmins.length==0){
+    //   alert("please select atleast 1 record to approve or reject")
+   // }
+    else{
 
     this.pos  = 0;
     this.checkedAdmins = this.checkedAdmins;
 
     
-    for (let admin of this.checkedAdmins) {
-      this.approveOrReject.push(admin.id.toString())
-       this.pos=this.pos+1;
+    //for (let admin of this.checkedAdmins) {
+    //  this.approveOrReject.push(admin.id.toString())
+    //   this.pos=this.pos+1;
 
-    }
+    //}
+
+    this.approveOrReject.push(this.selectedAdmin.id.toString())
+
+
     let params = {
      
-       ids:this.approveOrReject,
+      ids:this.approveOrReject,
+       
        status:"Approved"
 
     }
@@ -143,16 +149,22 @@ export class AdminComponent  {
     if(this.comment==""){
       alert("Comment is Required");
     }
-    else if(this.checkedAdmins.length==0){
-      alert("please select atleast 1 record to approve or reject")
-   }else{
+ //   else if(this.checkedAdmins.length==0){
+  //    alert("please select atleast 1 record to approve or reject")
+  // }else
+  {
     this.pos  = 0;
     this.checkedAdmins = this.checkedAdmins;
-    for (let admin of this.checkedAdmins) {
-      this.approveOrReject.push(admin.id.toString())
-       this.pos=this.pos+1;
+    
+    //for (let admin of this.checkedAdmins) {
+     // this.approveOrReject.push(admin.id.toString())
+      // this.pos=this.pos+1;
 
-    }
+    //}
+
+    
+    this.approveOrReject.push(this.selectedAdmin.id.toString())
+
     let params = {
      
        ids:this.approveOrReject,

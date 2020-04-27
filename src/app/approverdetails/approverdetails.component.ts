@@ -10,6 +10,7 @@ export class ApproverdetailsComponent implements OnInit {
   @Input() selectedAdmin : Admin;
 
   comment :string="";
+  
   constructor(private router : Router) { }
 
   ngOnInit(): void {
@@ -23,7 +24,7 @@ export class ApproverdetailsComponent implements OnInit {
     }
     else{
       alert("record Approved successfully..!")
-      this.router.navigate(['/AdminComponent']);
+      
    }
  }
 
