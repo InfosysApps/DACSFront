@@ -6,6 +6,10 @@ export class Admin  {
     gender : string;
     nationality : string;
     assignedTo : string;
+    reason:string;
+    action:string;
+    checklistSelected:string;
+    customerResponse:string;
     account : Account;
     // constructor(name : string, email : string, contactNo : number, assignedTo : string) {
     //     this.name = name;

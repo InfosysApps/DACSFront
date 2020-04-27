@@ -26,7 +26,7 @@ import { DecimalPipe } from '@angular/common';
 import { AdminComponent } from './admin/admin.component';
 import { AdminDetailsComponent } from './admin/admin-details.component';
 import { HomeComponent } from './home/home.component';
-import { ApproverdetailsComponent } from './admin/approverdetails/approverdetails.component';
+iimport { ApproverdetailsComponent } from './approverdetails/approverdetails.component';
 
 @NgModule({
   declarations: [
@@ -44,8 +44,7 @@ import { ApproverdetailsComponent } from './admin/approverdetails/approverdetail
     SortableDirective,
     AdminComponent,
     AdminDetailsComponent,
-    HomeComponent,
-    ApproverdetailsComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,
