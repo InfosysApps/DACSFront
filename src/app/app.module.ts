@@ -25,6 +25,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DecimalPipe } from '@angular/common';
 import { AdminComponent } from './admin/admin.component';
 import { AdminDetailsComponent } from './admin/admin-details.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { AdminDetailsComponent } from './admin/admin-details.component';
     DeckCardComponent,
     SortableDirective,
     AdminComponent,
-    AdminDetailsComponent
+    AdminDetailsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
