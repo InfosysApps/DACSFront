@@ -14,6 +14,7 @@ export class UserActivitiesComponent implements OnInit {
   p1 : number = 1;
   count1 : number = 5;
   myCustomers : Customer[] = [];
+  name :string;
 
   constructor(private router : Router, private customerAccountService : CustomerAccountService) { }
 
@@ -25,5 +26,20 @@ export class UserActivitiesComponent implements OnInit {
     let id : number;
     id = customer.id;
     this.router.navigate(['/Details', id]);
+  }
+  Search()
+  {
+    if(this.name !="")
+    {
+      this.myCustomers = this.myCustomers.filter(res=>
+        {
+          return res.name.toLocaleLowerCase().match(this.name.toLocaleLowerCase());
+        })
+    }
+      else if(this.name == "")
+      {
+     this.ngOnInit();
+      }
+    
   }
 }
