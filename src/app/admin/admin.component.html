@@ -14,19 +14,18 @@
             <th>Contact No.</th>
             <th>Email</th>
             <th>Gender</th>
-            <th>Nationality</th>
+            
             <th></th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let admin of admins | paginate: { itemsPerPage: count, currentPage: p }">
-            <td >{{admin.id}}</td>
-            <td >{{admin.name}}</td>
-            <td >{{admin.contactNo}}</td>
-            <td>{{admin.email}}</td>
-            <td >{{admin.gender}}</td>
-            <td >{{admin.nationality}}</td>
-            
+            <td (click) = "displayDetails(admin)">{{admin.id}}</td>
+            <td (click) = "displayDetails(admin)">{{admin.name}}</td>
+            <td (click) = "displayDetails(admin)">{{admin.contactNo}}</td>
+            <td (click) = "displayDetails(admin)">{{admin.email}}</td>
+            <td (click) = "displayDetails(admin)">{{admin.gender}}</td>
+           
             <td >
                       
             <input type="checkbox"  name="checkbox" (change)="onChange(admin)">
@@ -58,7 +57,7 @@ Comment : <input type="text" [(ngModel)]="comment" aria-setsize="150"  style="he
     
     <button type="submit"  style="margin-left: 100px ;"  class="btn btn-primary login-btn" (click) ="reject()">Reject</button>
 </div>
-
+</div>
 
 <!--<div *ngIf="pos != -1">
   <app-admin-details [checkedAdmins]="checkedAdmins"></app-admin-details>
@@ -69,3 +68,11 @@ Comment : <input type="text" [(ngModel)]="comment" aria-setsize="150"  style="he
   <button type="button" class="btn btn-danger" (click) = "goBack()">Back</button>
 
 -->
+
+<div *ngIf="pos != -1">
+  <app-approverdetails [selectedAdmin]="selectedAdmin"></app-approverdetails>
+  <br>
+  <span>&nbsp;</span><span>&nbsp;&nbsp;&nbsp;</span>
+  <span>&nbsp;</span><span>&nbsp;</span>
+  <button type="button" class="btn btn-danger" (click) = "goBack()">Back</button>
+</div>

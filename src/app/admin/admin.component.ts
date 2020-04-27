@@ -136,6 +136,8 @@ export class AdminComponent  {
   
   }
 
+  
+
 
   reject(){
     if(this.comment==""){

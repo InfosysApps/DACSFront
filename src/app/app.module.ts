@@ -21,6 +21,7 @@ import { CustomerDetailsComponent } from './user-dashboard/customer-details/cust
 import { CustomerFeedbackComponent } from './user-dashboard/customer-feedback/customer-feedback.component';
 import {AdminComponent} from './admin/admin.component';
 import {AdminDetailsComponent} from './admin/admin-details.component';
+import { ApproverdetailsComponent } from './approverdetails/approverdetails.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,8 @@ import {AdminDetailsComponent} from './admin/admin-details.component';
     // UserActivitiesComponent,
     CustomerFeedbackComponent,
     AdminComponent,
-    AdminDetailsComponent
+    AdminDetailsComponent,
+    ApproverdetailsComponent
   ],
   imports: [
     BrowserModule,
