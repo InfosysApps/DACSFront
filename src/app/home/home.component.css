@@ -54,19 +54,14 @@
     font-style: Times New Roman;
     font-size: 400%;
     font-weight: bold;
-    padding-top: 100px;
+    padding-top: 200px;
     color:white;
  }
 
- .landing-text{
-    text-align: center;
-    font-style: Times New Roman;
-    font-size: 150%;
-    padding-top: 30px;
-    color:white;
- }
 .title1 a:hover
 {
       background-color: Red;
       border-radius: 8px;
+      font-size: 70%;
+     font-weight: bold;
 }
