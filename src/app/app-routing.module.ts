@@ -11,7 +11,7 @@ import { AdminDetailsComponent } from './admin/admin-details.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/Login', pathMatch: 'full'},
+  { path: '', redirectTo: '/Home', pathMatch: 'full'},
   { path: 'Login', component: LoginComponent },
   { path: 'Signup', component: SignupComponent },
   { path: 'UserDashboard', component: UserDashboardComponent, canActivate:[AccessGuardService]},
