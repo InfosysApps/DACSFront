@@ -42,15 +42,15 @@
     <pagination-controls (pageChange)="p = $event"></pagination-controls   >
 </div>
 
-<div class="form-group">
+<!--<div class="form-group">
     
 
 Comment : <input type="text" [(ngModel)]="comment" aria-setsize="150"  style="height: 150px; width: 300px;"/>
 
 
+</div> -->
 </div>
-</div>
-<div   class="form-group">
+<!--<div   class="form-group">
     
     <button type="submit"   style="margin-left: 400px ;" class="btn btn-primary login-btn" (click) ="approve()">Approve </button>          
 
@@ -58,7 +58,7 @@ Comment : <input type="text" [(ngModel)]="comment" aria-setsize="150"  style="he
 
     
     <button type="submit"  style="margin-left: 100px ;"  class="btn btn-primary login-btn" (click) ="reject()">Reject</button>
-</div>
+</div> -->
 </div>
 
 <!--<div *ngIf="pos != -1">
@@ -77,6 +77,8 @@ Comment : <input type="text" [(ngModel)]="comment" aria-setsize="150"  style="he
         <br>
         <div>
           <h4 class="text-info">Approve Pane</h4>
+          <div>&nbsp;</div>
+          <h4 class="text-info">Pending For Approval</h4>
           <div>&nbsp;</div>
           <table class="table table-bordered">
             <thead>
@@ -137,5 +139,5 @@ Comment : <input type="text" [(ngModel)]="comment" aria-setsize="150"  style="he
   <br>
   <span>&nbsp;</span><span>&nbsp;&nbsp;&nbsp;</span>
   
-  <button type="button" class="btn btn-danger" (click) = "goBack()">Back</button>
+  <button type="button" class="btn btn-danger" (click) = "goBack()">Top</button>
 </div>
