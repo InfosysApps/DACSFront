@@ -36,11 +36,11 @@ function sort(customers: Customer[], column: string, direction: string): Custome
 
 function matches(customer: Customer, term: string, pipe: PipeTransform) {
   return pipe.transform(customer.id).includes(term)
-    || customer.name.includes(term)
+    || customer.name.toLowerCase().includes(term)
     || customer.contactNo.includes(term)
-    || customer.email.includes(term)
-    || customer.gender.includes(term)
-    || customer.assignedTo.includes(term);
+    || customer.email.toLowerCase().includes(term)
+    || customer.gender.toLowerCase().includes(term)
+    || customer.assignedTo.toLowerCase().includes(term);
 }
 
 @Injectable({
