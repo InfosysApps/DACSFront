@@ -1,3 +1,10 @@
+<div class="toolbar" role="banner">
+    <img width="40" alt="DACS Logo" src="../assets/img/DACS.png"/>
+    <span class="companytitle">D.A.C.S.</span>
+      <div class="spacer"></div>
+  </div>
+  <div class="content" role="main">
+  </div>
 <div class="signup-form">
     <form [formGroup]="signupForm" (ngSubmit)="SignupSubmit(signupForm)">
 		<h2>Register</h2>
@@ -17,10 +24,9 @@
             </div>        	
         </div>
         <div class="form-group">
-            <input type="mobile" #mobilenumber formControlName="mobile" maxlength="10"  class="form-control" name="mobile" placeholder="Mobile No" required="required" minlength="10">
-            <div *ngIf="(f.mobile.touched && f.mobile.invalid)" class="alert alert-danger">
-                <div *ngIf="f.mobile.errors.required">Mobile is required.</div>
-                <div *ngIf="f.mobile.errors.minlength || f.mobile.errors.maxlength">Mobile should be 10 digits.</div>
+            <input type="email" #emailid formControlName="emailid" maxlength="10"  class="form-control" name="emailid" placeholder="Email Id" required="required">
+            <div *ngIf="(f.emailid.touched && f.emailid.invalid)" class="alert alert-danger">
+                <div *ngIf="f.emailid.errors.required">Email is required.</div>
                 
             </div>
         </div>
@@ -33,7 +39,7 @@
         </div>
         <div class="form-group row"> 
             <div class="col-md-3">Gender:</div>
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <label class="radio-inline">
                     <input type="radio"  formControlName="gender" name="gender" id="Male" value="0">
                         Female

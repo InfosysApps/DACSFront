@@ -25,25 +25,24 @@
           <li class="nav-item has-treeview menu-open">
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/ODashboard" class="nav-link active">
+                <a href="/ODashboard" class="nav-link {{isODashboardActive}}">
                   <i class="fa fa-circle nav-icon"></i>
-                  <p>Operator Dashboard</p>
+                  <p>Bank Ops Dashboard</p>
                 </a>
               </li>
             </ul>
           </li>
           <li class="nav-header">Operator Assignments</li>
           <li class="nav-item">
-            <a href="/Search" class="nav-link">
+            <a href="/Search" class="nav-link {{isSearchActive}}">
               <i class="nav-icon fa fa-search"></i>
               <p>
                 Search
-                <span class="badge badge-info right">2</span>
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="/Dormants" class="nav-link">
+            <a href="/Dormants" class="nav-link {{isDormantsActive}}">
               <i class="nav-icon fa fa-th-list"></i>
               <p>
                 Total Dormant Accounts
@@ -51,15 +50,16 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/Assigned" class="nav-link">
+            <a href="/Assigned" class="nav-link {{isAssignedActive}}">
               <i class="nav-icon fa fa-thumbs-up"></i>
               <p>
                 Assigned to me
+                <span class="badge badge-info right">2</span>
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="/Followups" class="nav-link">
+            <a href="/Followups" class="nav-link {{isFollowupsActive}}">
               <i class="nav-icon fa fa-reply"></i>
               <p>
                 Follow-ups Taken By me
@@ -67,76 +67,52 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/Closures" class="nav-link">
+            <a href="/Closures" class="nav-link {{isClosuresActive}}">
               <i class="nav-icon fa fa-users"></i>
               <p>
                 Me taken for closure
               </p>
             </a>
           </li>
-          <li class="nav-item has-treeview">
+          <li class="nav-item has-treeview {{isMenuOpen}}">
             <a href="#" class="nav-link">
               <i class="nav-icon fa fa-book"></i>
               <p>
-                Pages
+                Dormants
                 <i class="fa fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/Profile" class="nav-link">
+                <a href="/Profile" class="nav-link {{isProfileActive}}">
                   <i class="fa fa-circle nav-icon"></i>
                   <p>Customer Profile</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/Account" class="nav-link">
+                <a href="/Account" class="nav-link {{isAccountActive}}">
                   <i class="fa fa-circle nav-icon"></i>
                   <p>Account Details</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/List" class="nav-link">
-                  <i class="fa fa-circle nav-icon"></i>
-                  <p>List</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/CustFeedback" class="nav-link">
-                  <i class="fa fa-circle nav-icon"></i>
-                  <p>Customer Feedback</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/examples/project-detail.html" class="nav-link">
-                  <i class="fa fa-circle nav-icon"></i>
-                  <p>My Activity Details</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="pages/examples/contacts.html" class="nav-link">
-                  <i class="fa fa-circle nav-icon"></i>
-                  <p>Other Operators</p>
                 </a>
               </li>
             </ul>
           </li>
           <li class="nav-header">Data Handling</li>
           <li class="nav-item">
-            <a href="https://adminlte.io/docs/3.0" class="nav-link">
+            <a href="javascript:void(0)" class="nav-link">
               <i class="nav-icon fa fa-file"></i>
               <p>Import</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="https://adminlte.io/docs/3.0" class="nav-link">
+            <a href="javascript:void(0)" class="nav-link">
               <i class="nav-icon fa fa-file"></i>
               <p>Export</p>
             </a>
           </li>
 
           <li class="nav-item">
-            <a href="https://adminlte.io/docs/3.0" class="nav-link">
+            <a href="javascript:void(0)" class="nav-link">
               <i class="nav-icon fa fa-file"></i>
               <p>Top Operators</p>
             </a>

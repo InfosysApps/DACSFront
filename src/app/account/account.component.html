@@ -1,4 +1,4 @@
-<div class="hold-transition sidebar-mini">
+<div class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
     <div class="wrapper">
 <!-- Operator Dashboard header managers from appheader component. -->
 <app-opheader></app-opheader>
@@ -17,8 +17,8 @@
               </div>
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                  <li class="breadcrumb-item"><a href="#">Home</a></li>
-                  <li class="breadcrumb-item active">User Profile</li>
+                  <li class="breadcrumb-item"><a href="/ODashboard">Home</a></li>
+                  <li class="breadcrumb-item active">Account Details</li>
                 </ol>
               </div>
             </div>
@@ -36,15 +36,17 @@
                   <div class="card-body box-profile">
                     <div class="text-center">
                       <img class="profile-user-img img-fluid img-circle"
-                           src="assets/img/lte/user1-128x128.jpg"
+                           src="assets/img/lte/avatar6.png"
                            alt="User profile picture">
                     </div>
     
                     <h3 class="profile-username text-center">Apte, Ankush</h3>
-    
                     <p class="text-muted text-center">California, LA</p>
     
                     <ul class="list-group list-group-unbordered mb-3">
+                      <li class="list-group-item">
+                        <b>Account</b> <a class="float-right">264872573</a>
+                      </li>
                       <li class="list-group-item">
                         <b>Phone</b> <a class="float-right">+1 (804) 123-5432</a>
                       </li>
@@ -56,52 +58,13 @@
                       </li>
                     </ul>
     
-                    <a href="#" class="btn btn-primary btn-block"><b>See All Accounts</b></a>
+                    <a href="/Profile" class="btn btn-primary btn-block"><b>See All Accounts</b></a>
+                    <a href="/Profile" class="btn btn-success btn-block"><b>Assign to me</b></a>
                   </div>
                   <!-- /.card-body -->
                 </div>
                 <!-- /.card -->
-    
-                <!-- About Me Box -->
-                <div class="card card-primary">
-                  <div class="card-header">
-                    <h3 class="card-title">About Me</h3>
-                  </div>
-                  <!-- /.card-header -->
-                  <div class="card-body">
-                    <strong><i class="fa fa-book mr-1"></i> Education</strong>
-    
-                    <p class="text-muted">
-                      B.S. in Computer Science from the University of Tennessee at Knoxville
-                    </p>
-    
-                    <hr>
-    
-                    <strong><i class="fa fa-location-arrow"></i> Location</strong>
-    
-                    <p class="text-muted">Malibu, California</p>
-    
-                    <hr>
-    
-                    <strong><i class="fa fa-pencil"></i> Skills</strong>
-    
-                    <p class="text-muted">
-                      <span class="tag tag-danger">UI Design</span>
-                      <span class="tag tag-success">Coding</span>
-                      <span class="tag tag-info">Javascript</span>
-                      <span class="tag tag-warning">PHP</span>
-                      <span class="tag tag-primary">Node.js</span>
-                    </p>
-    
-                    <hr>
-    
-                    <strong><i class="fa fa-file-alt mr-1"></i> Notes</strong>
-    
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
-                  </div>
-                  <!-- /.card-body -->
-                </div>
-                <!-- /.card -->
+  
               </div>
               <!-- /.col -->
               <div class="col-md-9">
