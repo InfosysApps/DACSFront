@@ -3,13 +3,21 @@
 <div *ngIf = "pos == -1">
   <div class="container" *ngIf="!showMyActivities">
     <br>
-    <div >
-      <h4 class="text-info" style="background-color:rgb(190, 204, 64);color:white;text-align: center;line-height: 50px;" >Approve Pane</h4>
-      <div>&nbsp;</div>
-      <h4 class="text-info">Pending For Approval</h4>
-    
-      <div>&nbsp;</div>
-      <table class="table table-bordered">
+    <div class="nav-contents">
+      <nav>
+        <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+          <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true" style="background-color:rgb(190, 204, 64);color:white;text-align: center;line-height: 50px; font-size: 2rem">Approve Pane</a>
+          </div>
+      </nav>
+    </div>
+    <div>&nbsp;</div>
+    <h4 class="text-info">Pending For Approval</h4>
+          <div>&nbsp;</div>
+      <div >
+      <div class="form-group form-inline">&nbsp;
+        Search: <input class="form-control ml-2" type="text" name="searchTerm" [(ngModel)]="name" (input)="Search()"/>
+       </div>
+      <table class="table table-bordered" style="background-color:rgb(230, 245, 245);">
         <thead>
           <tr>
             <th>Id</th>
@@ -75,16 +83,19 @@ Comment : <input type="text" [(ngModel)]="comment" aria-setsize="150"  style="he
 
 -->
 
-<div *ngIf="pos != -1">
+<div *ngIf="pos != -1" >
 
-    <div class="container" *ngIf="!showMyActivities">
+    <div class="container" *ngIf="!showMyActivities" >
         <br>
         <div>
           <h4 class="text-info" style="background-color:rgb(190, 204, 64);color:white;text-align: center;line-height: 50px;">Approve Pane</h4>
           <div>&nbsp;</div>
           <h4 class="text-info">Pending For Approval</h4>
           <div>&nbsp;</div>
-          <table class="table table-bordered">
+          <div class="form-group form-inline">&nbsp;
+            Search: <input class="form-control ml-2" type="text" name="searchTerm" [(ngModel)]="name" (input)="Search()"/>
+           </div>
+          <table class="table table-bordered" style="background-color:rgb(230, 245, 245);">
             <thead>
               <tr>
                 <th>Id</th>

@@ -28,6 +28,7 @@ export class AdminComponent  {
   showMyActivities : boolean = false;
   count2 :number = 0;
   comment :string="";
+  name :string="";
    
   ngOnInit(): void {
    
@@ -188,6 +189,24 @@ this.admindata = [
     
   }
 
+  
+
+
+  Search()
+  {
+    if(this.name !="")
+    {
+      this.admins = this.admins.filter(res=>
+        {
+          return res.name.toLocaleLowerCase().match(this.name.toLocaleLowerCase());
+        })
+    }
+      else if(this.name == "")
+      {
+     this.ngOnInit();
+      }
+    
+  }
 
   goBack() {
     this.pos = -1;
