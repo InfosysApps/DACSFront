@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable, throwError} from 'rxjs';
 import {map, retry, catchError} from 'rxjs/operators';
+import { Urls } from '../constants/urls';
 
 
 @Injectable({
@@ -19,7 +20,9 @@ export class AuthService {
 
   public LoginVerifyPostCall(data) : Observable<any> 
   {
-    return this._http.post('http://localhost:51542/api/login/verify', data, {headers:this.Header})
+    let urls : Urls = new Urls();
+    let login_url : string = urls.AWS_URL + urls.LOGIN_URI;
+    return this._http.post(login_url, data, {headers:this.Header})
       .pipe(
         retry(1),
         catchError(this.HandleError),
