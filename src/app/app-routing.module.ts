@@ -14,7 +14,7 @@ import { OpfollowupsComponent } from './opfollowups/opfollowups.component';
 import { OpclosuresComponent } from './opclosures/opclosures.component';
 
 const routes: Routes = [
-  { path: '', component: AppComponent},
+  { path: '', redirectTo: '/Login', pathMatch: 'full'},
   { path: 'Login', component: LoginComponent },
   { path: 'Signup', component: SignupComponent },
   { path: 'ODashboard', component: ODashboardComponent },
