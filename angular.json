@@ -125,6 +125,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "DACSFront"
+    }
+  },
+  "defaultProject": "DACSFront",
+  "cli": {
+    "analytics": "9a3bebc5-82f9-4e56-89ec-ff996c7dcc94"
+  }
 }

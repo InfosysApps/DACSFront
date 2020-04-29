@@ -1,12 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
-
+import * as jsPDF from 'jspdf';
+import * as pdfMake from 'pdfmake/build/pdfmake';
+import * as pdfFonts from 'pdfmake/build/vfs_fonts';
+//pdfMake.vfs = pdfFonts.pdfMake.vfs;
 @Component({
   selector: 'app-oplegend',
   templateUrl: './oplegend.component.html',
   styleUrls: ['./oplegend.component.css']
 })
 export class OplegendComponent implements OnInit {
+  @ViewChild('htmlData') htmlData:ElementRef;
+
   public isMenuOpen: string = "";
   public isODashboardActive = "";
   public isAccountActive : string = "";
@@ -57,4 +62,70 @@ export class OplegendComponent implements OnInit {
   ngOnInit(): void {
   }
 
-}
+  public openPDF():void {
+    let DATA = this.htmlData.nativeElement;
+    let doc = new jsPDF('p','pt', 'a4');
+    doc.fromHTML(DATA.innerHTML,15,15);
+    doc.output('dataurlnewwindow');
+  }
+  public downloadPDF():void {
+    
+    let DATA = this.htmlData.nativeElement;
+    let doc = new jsPDF('p','pt', 'a4');
+
+    doc.co
+    let handleElement = {
+      '#editor':function(element,renderer){
+        return true;
+      } 
+    };
+    doc.fromHTML(DATA.innerHTML,15,15,{
+      'width': 200,
+      'elementHandlers': handleElement
+    });
+
+    doc.save('angular-demo.pdf');
+  }
+
+  public generatePdf():void{
+    pdfMake.vfs = pdfFonts.pdfMake.vfs;
+      var dd = {
+        content: [
+          {
+            
+            
+            //layout: 'lightHorizontalLines', // optional
+            table: {
+              // headers are automatically repeated if the table spans over multiple pages
+              // you can declare how many rows should be treated as headers
+              headerRows: 1,
+             
+              
+              widths: ['auto', 'auto', 'auto', 'auto','auto','auto','auto','auto','auto'],
+              
+              body: [              
+                [{ text:'Id' ,fontSize:8},{ text:'CustomerUniqueId', fontSize:8},{ text:'FirstName', fontSize:8},{ text:'LastName', fontSize:8},{ text:'Gender', fontSize:8},{ text:'DOB', fontSize:8},{ text:'Age', fontSize:8},{ text:'Address', fontSize:8},{ text:'EmailId',fontSize:8}],
+                [{ text:'69ae523e',fontSize:8},{ text:'Ankush_123', fontSize:8},{ text:'Ankush', fontSize:8},{ text:'Apte', fontSize:8},{ text:'Male', fontSize:8},{ text:'03-02-1982',fontSize:8},{ text:'37',fontSize:8},{ text:'Dange Chowk',fontSize:8},{ text:'ankush.apte@gmail.com',fontSize:8}],
+                [{ text:'69ae523e',fontSize:8},{ text:'Ankush_123', fontSize:8},{ text:'Ankush', fontSize:8},{ text:'Apte', fontSize:8},{ text:'Male', fontSize:8},{ text:'03-02-1982',fontSize:8},{ text:'37',fontSize:8},{ text:'Dange Chowk',fontSize:8},{ text:'ankush.apte@gmail.com',fontSize:8}],
+               
+                [{ text:'69ae523e',fontSize:8},{ text:'Ankush_123', fontSize:8},{ text:'Ankush', fontSize:8},{ text:'Apte', fontSize:8},{ text:'Male', fontSize:8},{ text:'03-02-1982',fontSize:8},{ text:'37',fontSize:8},{ text:'Dange Chowk',fontSize:8},{ text:'ankush.apte@gmail.com',fontSize:8}],
+               
+                [{ text:'69ae523e',fontSize:8},{ text:'Ankush_123', fontSize:8},{ text:'Ankush', fontSize:8},{ text:'Apte', fontSize:8},{ text:'Male', fontSize:8},{ text:'03-02-1982',fontSize:8},{ text:'37',fontSize:8},{ text:'Dange Chowk',fontSize:8},{ text:'ankush.apte@gmail.com',fontSize:8}],
+               
+                [{ text:'69ae523e',fontSize:8},{ text:'Ankush_123', fontSize:8},{ text:'Ankush', fontSize:8},{ text:'Apte', fontSize:8},{ text:'Male', fontSize:8},{ text:'03-02-1982',fontSize:8},{ text:'37',fontSize:8},{ text:'Dange Chowk',fontSize:8},{ text:'ankush.apte@gmail.com',fontSize:8}]
+               
+              ]
+            
+            }
+          }
+        ]
+      }  
+        
+     
+      //pdfMake.createPdf(dd).open();
+    pdfMake.createPdf(dd).download();
+  };
+  }
+
+
+
