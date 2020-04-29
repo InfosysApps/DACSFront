@@ -1,0 +1,175 @@
+<div class="hold-transition sidebar-mini">
+<div class="wrapper">
+<!-- Operator Dashboard header managers from appheader component. -->
+<app-opheader></app-opheader>
+
+<!--Import Operator Legend Panel here #legendpanel Starts here-->
+<app-oplegend></app-oplegend>
+  
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1>Customer Profile</h1>
+            </div>
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="/ODashboard">Home</a></li>
+                <li class="breadcrumb-item active">Customer Profile</li>
+              </ol>
+            </div>
+          </div>
+        </div><!-- /.container-fluid -->
+      </section>
+  
+      <section class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12">
+              <div class="callout callout-info">
+                <h5><i class="fa fa-info"></i> Note:</h5>
+                This is a VIP customer.
+              </div>
+  
+  
+              <!-- Main content -->
+              <div class="invoice p-3 mb-3">
+                <!-- title row -->
+                <div class="row">
+                  <div class="col-12">
+                    <h4>
+                      <i class="fa fa-user"></i> Apte, Ankush
+                      <small class="float-right"><b>Last Transaction Date:</b> 2/10/2014</small>
+                    </h4>
+                  </div>
+                  <!-- /.col -->
+                </div>
+                <!-- info row -->
+                <div class="row invoice-info">
+                  <div class="col-sm-4 invoice-col">
+                    
+                    <address>
+                      <strong>Address</strong><br>
+                      795 Folsom Ave, Suite 600<br>
+                      San Francisco, CA 94107<br>
+                      <b>Phone:</b> +1 (804) 123-5432<br>
+                      <b>Alt Phone:</b> +1 (673) 578-5748<br>
+                      <b>Email:</b> apteankush@gmail.com
+                    </address>
+                  </div>
+                  <!-- /.col -->
+                  <!-- <div class="col-sm-4 invoice-col">
+                    
+                    <address>
+                      <strong>John Doe</strong><br>
+                      795 Folsom Ave, Suite 600<br>
+                      San Francisco, CA 94107<br>
+                      Phone: (555) 539-1037<br>
+                      Email: john.doe@example.com
+                    </address>
+                  </div> -->
+                  <!-- /.col -->
+                  <div class="col-sm-4 invoice-col">
+                    <b>Customer Id:</b> a048a63c-40da-4e26-892f-d4edfff71811<br>
+                    <b>Account ID:</b> 5264872569<br>
+                    <b>Account Type:</b> Saving<br>
+                    <b>Balance:</b> $100,594<br>
+                    <b>KYC Status:</b> Done
+                  </div>
+                  <!-- /.col -->
+                </div>
+                <!-- /.row -->
+  
+                <!-- Table row -->
+                <div class="row">
+                  <div class="col-12 table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                      <tr>
+                        <th>No</th>
+                        <th>Account No</th>
+                        <th>Status</th>
+                        <th>Customer Feedback (if any)</th>
+                        <th>Assigned To</th>
+                        <th>Last Transaction Date</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td><a href="/Account">5264872569</a></td>
+                        <td>New</td>
+                        <td>NA</td>
+                        <td>NA</td>
+                        <td>2020-04-14 20:25</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td><a href="/Account">264872570</a></td>
+                        <td>Schedule a call</td>
+                        <td>Give me a call post 5 days.</td>
+                        <td>Kadam, Komal</td>
+                        <td>2020-04-14 20:25</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td><a href="/Account">264872571</a></td>
+                        <td>On-Hold</td>
+                        <td>Bank ops guy kept it on hold.</td>
+                        <td>NA</td>
+                        <td>2020-04-14 20:25</td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td><a href="/Account">264872572</a></td>
+                        <td>Checklist Pending</td>
+                        <td>Customer is ready to close this dormant account.</td>
+                        <td>Patange, Amit</td>
+                        <td>2020-04-14 20:25</td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td><a href="/Account">264872573</a></td>
+                        <td>Ready for Closure</td>
+                        <td>Account falls into ready for closure category.</td>
+                        <td>Process Completed</td>
+                        <td>2020-04-14 20:25</td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- /.col -->
+                </div>
+                <!-- /.row -->
+  
+                <!-- this row will not appear when printing -->
+                <div class="row no-print">
+                  <div class="col-12">
+                    <a href="javascript:void(0)" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Print</a>
+                    <button type="button" class="btn btn-success float-right"><i class="fa fa-user"></i> Assign to me
+                    </button>
+                    <button type="button" class="btn btn-primary float-right" style="margin-right: 5px;">
+                      <i class="fa fa-download"></i> Generate PDF
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- /.invoice -->
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </section>
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    <app-opfooter></app-opfooter>
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+      <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
+  </div>
+</div>

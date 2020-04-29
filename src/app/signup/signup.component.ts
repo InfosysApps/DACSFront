@@ -16,7 +16,7 @@ export class SignupComponent implements OnInit {
 
   public signupForm : FormGroup;
   public submitted : boolean = false;
-  @ViewChild('mobilenumber') mobilenumber: ElementRef;
+  @ViewChild('emailid') mobilenumber: ElementRef;
 
   constructor(private _FormBuilder : FormBuilder,
     private _Router : Router,
@@ -29,7 +29,7 @@ export class SignupComponent implements OnInit {
     this.signupForm = this._FormBuilder.group({
       firstName: new FormControl('', [Validators.required, Validators.minLength(2)]),
       lastName: new FormControl('', [Validators.required, Validators.minLength(2)]),
-      mobile: new FormControl('', [Validators.required, Validators.minLength(10),Validators.maxLength(10)]),
+      emailid: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required, Validators.minLength(2)]),
       gender: new FormControl('', [Validators.required]),
       termsandconditions: new FormControl('', [Validators.required])
@@ -41,7 +41,7 @@ export class SignupComponent implements OnInit {
     return this.signupForm.controls;
   }
 
-  get mobile(): any { return this.signupForm.get('mobile'); }
+  get emailid(): any { return this.signupForm.get('emailid'); }
 
   public SignupSubmit(form) 
   {  
