@@ -68,10 +68,8 @@ export class OplegendComponent implements OnInit {
         if(response.responseobj.getstatus) {
           this.operator = response.responseobj.operator;
         }
-      })
-  }
-
-  getOperatorName() {
-    return this.operator.LastName + ", " + this.operator.FirstName;
+      }, error => {
+        console.log("Error "+error);
+    });
   }
 }
