@@ -26,6 +26,9 @@ export class DialogComponent implements OnInit {
   addedfile :File;
   message;
   onFilesAdded() {
+
+    this.uploadSuccessful = false;
+    
     const files: { [key: string]: File } = this.file.nativeElement.files;
     
     

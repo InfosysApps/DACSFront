@@ -1,0 +1,22 @@
+
+<div>
+        <mat-form-field>
+                <mat-label>Choose a From Date</mat-label>
+                <input matInput [matDatepicker]="fromPicker" 
+                [disabled]="!true">
+            <mat-datepicker-toggle matSuffix [for]="fromPicker"></mat-datepicker-toggle>
+            <mat-datepicker #fromPicker></mat-datepicker>
+                
+            </mat-form-field>
+</div>
+<div class="exprt-files-btn">
+
+    
+<mat-dialog-actions class="actions">
+        <div class="exprt-files-btn">
+        <button mat-raised-button (click)="generatePdf()">Export</button>
+        <button *ngIf="showCancelButton" mat-button mat-dialog-close>Cancel</button>
+        </div>
+</mat-dialog-actions>
+
+</div>

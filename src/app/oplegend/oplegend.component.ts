@@ -5,7 +5,9 @@ import * as pdfMake from 'pdfmake/build/pdfmake';
 import * as pdfFonts from 'pdfmake/build/vfs_fonts';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from 'src/app/upload/dialog/dialog.component';
+import { ExportDialogComponent } from 'src/app/export/dialog/exportdialog.component';
 import { UploadService } from 'src/app/upload/upload.service';
+import { ExportService } from 'src/app/export/export.service';
 
 //pdfMake.vfs = pdfFonts.pdfMake.vfs;
 @Component({
@@ -26,7 +28,7 @@ export class OplegendComponent implements OnInit {
   public isClosuresActive : string = "";
   public isSearchActive : string = "";
 
-  constructor(private _router : Router,public dialog: MatDialog, public uploadService: UploadService) {
+  constructor(private _router : Router,public dialog: MatDialog, public uploadService: UploadService,public exportService:ExportService) {
     if(this._router.url == "ODashboard")
     {
       this.isODashboardActive = "active";
@@ -134,6 +136,12 @@ export class OplegendComponent implements OnInit {
   public importpdf():void{
     let dialogRef = this.dialog.open(DialogComponent, { width: '50%', height: '50%' });
   }
+
+  public exportpdf():void{
+    let dialogRef = this.dialog.open(ExportDialogComponent, { width: '50%', height: '50%' });
+  }
+
+
   }
 
 

@@ -1,5 +1,5 @@
 .add-files-btn {
-  float: right;
+  float: left;
 }
 
 :host {
@@ -15,4 +15,26 @@
 
 .container {
   height: 100%;
+}
+.uploadCard {
+  background-color: rgba(250, 209, 209, 0.644);
+}
+
+.limit-warn {
+  font-size: smaller;
+  color: rgb(255, 102, 0);
+  float: left;
+}
+
+.limit-file-msg {
+  font-size: smaller;
+  color: rgb(76, 0, 255);
+  float: left;
+}
+
+
+.error-val {
+  font-size: smaller;
+  color: rgb(255, 0, 0);
+  float: left;
 }

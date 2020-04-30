@@ -30,6 +30,8 @@ import { OpassignedComponent } from './opassigned/opassigned.component';
 import { OpfollowupsComponent } from './opfollowups/opfollowups.component';
 import { OpclosuresComponent } from './opclosures/opclosures.component';
 import { UploadModule } from './upload/upload.module';
+import { ExportModule } from './export/export.module';
+
 
 @NgModule({
   declarations: [
@@ -63,7 +65,8 @@ import { UploadModule } from './upload/upload.module';
     HttpClientModule,
     StorageServiceModule,
     ChartsModule,
-    UploadModule
+    UploadModule,
+    ExportModule
    
   ],
   providers: [AuthService, 
