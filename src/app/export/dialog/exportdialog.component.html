@@ -1,5 +1,14 @@
 
 <div>
+
+        <h1 mat-dialog-title>Export  a Operator Account Details</h1>
+
+
+</div>
+
+
+
+<div>
         <mat-form-field>
                 <mat-label>Choose a From Date</mat-label>
                 <input matInput [matDatepicker]="fromPicker" 
@@ -8,6 +17,15 @@
             <mat-datepicker #fromPicker></mat-datepicker>
                 
             </mat-form-field>
+
+            <mat-form-field>
+                    <mat-label>Choose a To Date</mat-label>
+                    <input matInput [matDatepicker]="fromPickerFr" 
+                    [disabled]="!true">
+                <mat-datepicker-toggle matSuffix [for]="fromPickerFr"></mat-datepicker-toggle>
+                <mat-datepicker #fromPickerFr></mat-datepicker>
+                    
+                </mat-form-field>
 </div>
 <div class="exprt-files-btn">
 
