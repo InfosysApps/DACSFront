@@ -13,6 +13,7 @@ import { OpassignedComponent } from './opassigned/opassigned.component';
 import { OpfollowupsComponent } from './opfollowups/opfollowups.component';
 import { OpclosuresComponent } from './opclosures/opclosures.component';
 
+
 const routes: Routes = [
   { path: '', component: AppComponent},
   { path: 'Login', component: LoginComponent },
@@ -25,7 +26,8 @@ const routes: Routes = [
   { path: 'Assigned', component: OpassignedComponent },
   { path: 'Followups', component: OpfollowupsComponent },
   { path: 'Closures', component: OpclosuresComponent },
-  { path: '**', component: NotFoundComponent },
+  
+  { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({

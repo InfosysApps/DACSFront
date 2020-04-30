@@ -29,7 +29,8 @@ import { DormantsComponent } from './dormants/dormants.component';
 import { OpassignedComponent } from './opassigned/opassigned.component';
 import { OpfollowupsComponent } from './opfollowups/opfollowups.component';
 import { OpclosuresComponent } from './opclosures/opclosures.component';
-import { UploadModule } from './upload/upload.module';
+import { FileexportComponent } from './fileexport/fileexport.component';
+import { FileImportComponent } from './fileimport/fileimport.component';
 
 @NgModule({
   declarations: [
@@ -51,8 +52,9 @@ import { UploadModule } from './upload/upload.module';
     DormantsComponent,
     OpassignedComponent,
     OpfollowupsComponent,
-    OpclosuresComponent
-     
+    OpclosuresComponent,
+    FileexportComponent,
+    FileImportComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,7 +65,6 @@ import { UploadModule } from './upload/upload.module';
     HttpClientModule,
     StorageServiceModule,
     ChartsModule,
-    UploadModule
    
   ],
   providers: [AuthService, 
