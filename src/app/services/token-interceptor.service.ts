@@ -16,7 +16,7 @@ export class TokenInterceptorService implements HttpInterceptor {
     let urls : Urls = new Urls();
     let tokenizedReq = req.clone({
       setHeaders: {
-        Authorization: 'Bearer '+urls.TOKEN//sessionHelper.GetSessionStorage(sessionHelper.TokenKey)
+        Authorization: 'Bearer '+sessionHelper.GetSessionStorage(sessionHelper.TokenKey)
       }
     })
     return next.handle(tokenizedReq)
