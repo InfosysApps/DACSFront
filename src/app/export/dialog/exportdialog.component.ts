@@ -15,6 +15,7 @@ import { FileUiExportModel } from 'src/app/model/file.ui.export.model';
 export class ExportDialogComponent implements OnInit {
   @ViewChild('file', { static: false }) file;
 
+
   public files: Set<File> = new Set();
   fileUiExportModel: FileUiExportModel;
   constructor(public dialogRef: MatDialogRef<ExportDialogComponent>, public uploadService: ExportService) { }
