@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -14,7 +13,7 @@ import { OpfollowupsComponent } from './opfollowups/opfollowups.component';
 import { OpclosuresComponent } from './opclosures/opclosures.component';
 
 const routes: Routes = [
-  { path: '', component: AppComponent},
+  { path: '', redirectTo: '/Login', pathMatch: 'full'},
   { path: 'Login', component: LoginComponent },
   { path: 'Signup', component: SignupComponent },
   { path: 'ODashboard', component: ODashboardComponent },

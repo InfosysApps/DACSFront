@@ -43,35 +43,35 @@ export class LoginComponent implements OnInit {
   public LoginSubmit(form) : void {    
     if(this.loginForm.valid)
     {
-      this._Router.navigateByUrl('/ODashboard');     
-      // let loginCreds = { username : this.loginForm.value.username, password : this.loginForm.value.password};
-      // this._AuthService.LoginVerifyPostCall(loginCreds)
-      //     .subscribe(response => {
-      //       if(response.responseobj.loginstatus)
-      //       {
-      //           this._SessionHelper.SetSessionStorage(
-      //                   this._SessionHelper.TokenKey, 
-      //                   response.responseobj.token);
+      let loginCreds = { username : this.loginForm.value.username, password : this.loginForm.value.password};
+      this._AuthService.LoginVerifyPostCall(loginCreds)
+          .subscribe(response => {
+            if(response.responseobj.loginstatus)
+            {
+                this._SessionHelper.SetSessionStorage(
+                        this._SessionHelper.TokenKey, 
+                        response.responseobj.token);
+                this._Router.navigateByUrl('/ODashboard');
 
-      //             this._Talk.Success(new TalkParam({
-      //               Title: "Good job!", 
-      //               Text:"Login Successful.", 
-      //               Icon: "success", 
-      //               ConfirmButtonText:"Proceed"}));
-      //       }
-      //       else{
-      //         this._Talk.Failure(new TalkParam({
-      //           Title: "Login Failed!", 
-      //           Text:"Please try with correct login credentials.", 
-      //           Icon: "error", 
-      //           ConfirmButtonText:"Ok"}));
-      //       }
+                  // this._Talk.Success(new TalkParam({
+                  //   Title: "Good job!", 
+                  //   Text:"Login Successful.", 
+                  //   Icon: "success", 
+                  //   ConfirmButtonText:"Proceed"}));
+            }
+            else{
+              // this._Talk.Failure(new TalkParam({
+              //   Title: "Login Failed!", 
+              //   Text:"Please try with correct login credentials.", 
+              //   Icon: "error", 
+              //   ConfirmButtonText:"Ok"}));
+            }
 
-      //     }, error => {
-      //         console.log("Error "+error);
-      //     });
+          }, error => {
+              console.log("Error "+error);
+          });
 
-      //     this.loginForm.reset();
+          this.loginForm.reset();
     }
     else{
       Object.keys(this.loginForm.controls).forEach(field => { // {1}
