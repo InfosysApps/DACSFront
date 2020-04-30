@@ -53,18 +53,18 @@ export class LoginComponent implements OnInit {
                         response.responseobj.token);
                 this._Router.navigateByUrl('/ODashboard');
 
-                  this._Talk.Success(new TalkParam({
-                    Title: "Good job!", 
-                    Text:"Login Successful.", 
-                    Icon: "success", 
-                    ConfirmButtonText:"Proceed"}));
+                  // this._Talk.Success(new TalkParam({
+                  //   Title: "Good job!", 
+                  //   Text:"Login Successful.", 
+                  //   Icon: "success", 
+                  //   ConfirmButtonText:"Proceed"}));
             }
             else{
-              this._Talk.Failure(new TalkParam({
-                Title: "Login Failed!", 
-                Text:"Please try with correct login credentials.", 
-                Icon: "error", 
-                ConfirmButtonText:"Ok"}));
+              // this._Talk.Failure(new TalkParam({
+              //   Title: "Login Failed!", 
+              //   Text:"Please try with correct login credentials.", 
+              //   Icon: "error", 
+              //   ConfirmButtonText:"Ok"}));
             }
 
           }, error => {

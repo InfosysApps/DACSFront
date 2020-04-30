@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { OperatorService } from '../services/operator.service';
 import { Operator } from '../models/operator';
+import { TalkParam, TalkService } from '../services/talk.service';
 
 @Component({
   selector: 'app-oplegend',
@@ -21,7 +22,8 @@ export class OplegendComponent implements OnInit {
 
   public operator : Operator = new Operator();
 
-  constructor(private _router : Router, private operatorService : OperatorService) {
+  constructor(private _router : Router, private operatorService : OperatorService,
+    private talkService : TalkService) {
     if(this._router.url == "ODashboard")
     {
       this.isODashboardActive = "active";
@@ -71,5 +73,13 @@ export class OplegendComponent implements OnInit {
       }, error => {
         console.log("Error "+error);
     });
+  }
+
+  comingUpSoon() {
+    this.talkService.Success(new TalkParam({
+      Title: "Feature", 
+      Text:"Coming Up Soon!", 
+      Icon: "success", 
+      ConfirmButtonText:"Proceed"}));
   }
 }
