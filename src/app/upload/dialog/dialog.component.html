@@ -1,8 +1,10 @@
 <input type="file" #file style="display: none" (change)="onFilesAdded()" multiple />
 <div class="container" fxLayout="column" fxLayoutAlign="space-evenly stretch">
-    
-  <h1 mat-dialog-title>Upload Operator Account Details</h1>
+  
+  <b><h1 mat-dialog-title style="text-align: center; color: mediumblue;">Upload Operator Account Details</h1></b>
+  <b><small style="font-style: italic;" >Please upload file below...</small></b>
   <div>
+    <small></small>
     <button [disabled]="uploading || uploadSuccessful" mat-raised-button color="primary" class="add-files-btn" (click)="addFiles()">
       Add Files
     </button>
@@ -31,7 +33,7 @@
   <!-- This are the actions of the dialog, containing the primary and the cancel button-->
   <mat-dialog-actions class="actions">
     
-    <button *ngIf="showCancelButton" mat-button mat-dialog-close>Cancel</button>
+    <button *ngIf="showCancelButton" mat-raised-button color="primary" mat-button mat-dialog-close >Cancel</button>
     <button mat-raised-button color="primary" [disabled]="!canBeClosed" (click)="closeDialog()">{{primaryButtonText}}</button>
     
   </mat-dialog-actions>

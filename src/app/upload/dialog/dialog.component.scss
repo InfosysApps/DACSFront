@@ -1,5 +1,6 @@
 .add-files-btn {
   float: left;
+  background-color:green;
 }
 
 :host {
@@ -7,10 +8,11 @@
   display: flex;
   flex: 1;
   flex-direction: column;
+  background-color:rgb(255, 203, 231);
 }
 
 .actions {
-  justify-content: flex-end;
+  justify-content: right;
 }
 
 .container {
@@ -38,3 +40,4 @@
   color: rgb(255, 0, 0);
   float: left;
 }
+

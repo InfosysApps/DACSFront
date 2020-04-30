@@ -1,7 +1,7 @@
 
 <div>
 
-        <h1 mat-dialog-title>Export  a Operator Account Details</h1>
+        <b><h1 mat-dialog-title style="color: blue;">Export  a Operator Account Details</h1></b>
 
 
 </div>
@@ -10,16 +10,16 @@
 
 <div>
         <mat-form-field>
-                <mat-label>Choose a From Date</mat-label>
+                <mat-label style="color: crimson;">Choose a From Date</mat-label>
                 <input matInput [matDatepicker]="fromPicker" 
                 [disabled]="!true">
             <mat-datepicker-toggle matSuffix [for]="fromPicker"></mat-datepicker-toggle>
             <mat-datepicker #fromPicker></mat-datepicker>
                 
             </mat-form-field>
-
+            <br><br>
             <mat-form-field>
-                    <mat-label>Choose a To Date</mat-label>
+                    <mat-label style="color: crimson;">Choose a To Date</mat-label>
                     <input matInput [matDatepicker]="fromPickerFr" 
                     [disabled]="!true">
                 <mat-datepicker-toggle matSuffix [for]="fromPickerFr"></mat-datepicker-toggle>
@@ -35,8 +35,8 @@
     
 <mat-dialog-actions class="actions">
         <div class="exprt-files-btn">
-        <button mat-raised-button (click)="generatePdf()">Export</button>
-        <button *ngIf="showCancelButton" mat-button mat-dialog-close>Cancel</button>
+        <button mat-raised-button (click)="generatePdf()" mat-raised-button color="primary">Export</button>
+        <button *ngIf="showCancelButton" mat-raised-button color="primary" mat-button mat-dialog-close>Cancel</button>
         </div>
 </mat-dialog-actions>
 
