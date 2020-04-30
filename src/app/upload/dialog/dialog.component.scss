@@ -8,11 +8,12 @@
   display: flex;
   flex: 1;
   flex-direction: column;
-  background-color:rgb(255, 203, 231);
+  
 }
 
 .actions {
   justify-content: right;
+  float:right;
 }
 
 .container {

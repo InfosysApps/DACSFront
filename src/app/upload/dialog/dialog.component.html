@@ -1,7 +1,143 @@
 <input type="file" #file style="display: none" (change)="onFilesAdded()" multiple />
 <div class="container" fxLayout="column" fxLayoutAlign="space-evenly stretch">
   
-  <b><h1 mat-dialog-title style="text-align: center; color: mediumblue;">Upload Operator Account Details</h1></b>
+
+
+
+  <div>
+
+                
+    <!-- Navbar -->
+    <nav class=" navbar navbar-expand navbar-white "><!--style="left: 0;position: fixed;right: 0;top: 0;z-index: 1037;"-->
+          <!-- Left navbar links -->
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fa fa-bars"></i></a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+              <a href="/ODashboard" class="nav-link">Home</a>
+            </li>
+           
+          </ul>
+      
+  
+      
+          <!-- Right navbar links -->
+          <ul class="navbar-nav ml-auto">
+            <!-- Messages Dropdown Menu -->
+            <li class="nav-item dropdown">
+              <a class="nav-link" data-toggle="dropdown" href="#">
+                <i class="fa fa-comments"  style="position: relative;left: -11px;"></i>
+                <span class="badge badge-danger navbar-badge">3</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-lg ">
+                <a href="#" class="dropdown-item">
+                  <!-- Message Start -->
+                  <div class="media">
+                    <img src="assets/img/lte/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+                    <div class="media-body">
+                      <h3 class="dropdown-item-title">
+                        Brad Diesel
+                        <span class=" text-sm text-danger"><i class="fa fa-star"></i></span>
+                      </h3>
+                      <p class="text-sm">Call me whenever you can...</p>
+                      <p class="text-sm text-muted"><i class="fa fa-clock mr-1"></i> 4 Hours Ago</p>
+                    </div>
+                  </div>
+                  <!-- Message End -->
+                </a>
+                <div class="dropdown-divider"></div>
+                <a href="#" class="dropdown-item">
+                  <!-- Message Start -->
+                  <div class="media">
+                    <img src="assets/img/lte/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                    <div class="media-body">
+                      <h3 class="dropdown-item-title">
+                        John Pierce
+                        <span class=" text-sm text-muted"><i class="fa fa-star"></i></span>
+                      </h3>
+                      <p class="text-sm">I got your message bro</p>
+                      <p class="text-sm text-muted"><i class="fa fa-clock mr-1"></i> 4 Hours Ago</p>
+                    </div>
+                  </div>
+                  <!-- Message End -->
+                </a>
+                <div class="dropdown-divider"></div>
+                <a href="#" class="dropdown-item">
+                  <!-- Message Start -->
+                  <div class="media">
+                    <img src="assets/img/lte/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                    <div class="media-body">
+                      <h3 class="dropdown-item-title">
+                        Nora Silvester
+                        <span class=" text-sm text-warning"><i class="fa fa-star"></i></span>
+                      </h3>
+                      <p class="text-sm">The subject goes here</p>
+                      <p class="text-sm text-muted"><i class="fa fa-clock mr-1"></i> 4 Hours Ago</p>
+                    </div>
+                  </div>
+                  <!-- Message End -->
+                </a>
+                <div class="dropdown-divider"></div>
+                <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+              </div>
+            </li>
+            <!-- Notifications Dropdown Menu -->
+            <li class="nav-item dropdown">
+              <a class="nav-link" data-toggle="dropdown" href="#">
+                <i class="fa fa-bell" style="position: relative;left: -13px;"></i>
+                <span class="badge badge-warning navbar-badge">15</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                <span class="dropdown-item dropdown-header">15 Notifications</span>
+                <div class="dropdown-divider"></div>
+                <a href="#" class="dropdown-item">
+                  <i class="fa fa-envelope mr-2"></i> 4 new messages
+                  <span class=" text-muted text-sm">3 mins</span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a href="#" class="dropdown-item">
+                  <i class="fa fa-users mr-2"></i> 8 friend requests
+                  <span class=" text-muted text-sm">12 hours</span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a href="#" class="dropdown-item">
+                  <i class="fa fa-file mr-2"></i> 3 new reports
+                  <span class=" text-muted text-sm">2 days</span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button"><i
+                  class="fa fa-th-large"></i></a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+              <a href="/Login" class="nav-link">Logout</a>
+            </li>
+          </ul>
+        </nav>
+        <!-- /.navbar -->
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                  <li class="nav-item has-treeview menu-open">
+                      <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                          
+                            <i class="fa fa-circle nav-icon"></i>
+                            <p>Upload a Operator Account Details</p>
+                          
+                        </li>
+                      </ul>
+                  </li>
+          </ul>
+  </nav>
+           
+          
+         
+  </div>
+  
   <b><small style="font-style: italic;" >Please upload file below...</small></b>
   <div>
     <small></small>
