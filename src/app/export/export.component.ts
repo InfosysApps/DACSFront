@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ExportDialogComponent } from './dialog/exportdialog.component';
 import { ExportService } from './export.service';
+import {MatSelectModule} from '@angular/material/select'
 
 @Component({
   selector: 'app-export',

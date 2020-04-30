@@ -5,6 +5,7 @@ import { forkJoin } from 'rxjs';
 import * as jsPDF from 'jspdf';
 import * as pdfMake from 'pdfmake/build/pdfmake';
 import * as pdfFonts from 'pdfmake/build/vfs_fonts';
+import { FileUiExportModel } from 'src/app/model/file.ui.export.model';
 
 @Component({
   selector: 'app-export-dialog',
@@ -15,10 +16,19 @@ export class ExportDialogComponent implements OnInit {
   @ViewChild('file', { static: false }) file;
 
   public files: Set<File> = new Set();
-
+  fileUiExportModel: FileUiExportModel;
   constructor(public dialogRef: MatDialogRef<ExportDialogComponent>, public uploadService: ExportService) { }
 
-  ngOnInit() { }
+  ngOnInit() { 
+
+    this.fileUiExportModel.typeAllowed = [
+      { value: '.xlsx', viewValue: 'Excel Sheet' },
+      { value: '.pdf', viewValue: 'PDF' },
+      { value: '.csv', viewValue: 'CSV File' }
+    ];
+
+
+  }
 
   progress;
   canBeClosed = true;

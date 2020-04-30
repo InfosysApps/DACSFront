@@ -14,9 +14,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule, } from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
-
+import {MatSelectModule} from '@angular/material/select'
 @NgModule({
-  imports: [MatNativeDateModule,MatDatepickerModule,MatFormFieldModule,MatInputModule,CommonModule, MatButtonModule, MatDialogModule, MatListModule, FlexLayoutModule, HttpClientModule, BrowserAnimationsModule, MatProgressBarModule],
+  imports: [MatSelectModule,MatNativeDateModule,MatDatepickerModule,MatFormFieldModule,MatInputModule,CommonModule, MatButtonModule, MatDialogModule, MatListModule, FlexLayoutModule, HttpClientModule, BrowserAnimationsModule, MatProgressBarModule],
   declarations: [ExportComponent, ExportDialogComponent],
   exports: [ExportComponent],
   entryComponents: [ExportDialogComponent], // Add the DialogComponent as entry component
