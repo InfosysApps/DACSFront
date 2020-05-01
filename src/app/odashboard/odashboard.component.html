@@ -14,7 +14,7 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0 text-dark">Dormant Account Closure Dashboard</h1>
+              <h1 class="m-0 text-dark">Dormant Account Processing Dashboard</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
@@ -92,14 +92,105 @@
             </div>
             <!-- /.col -->
           </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                  <p class="text-center">
+                    <strong>Account Retention Reasons (Top 4)</strong>
+                  </p>
+  
+                  <div class="progress-group">
+                    Good Services and Features
+                    <span class="float-right"><b>50</b>/100</span>
+                    <div class="progress progress-sm">
+                      <div class="progress-bar bg-primary" style="width: 50%"></div>
+                    </div>
+                  </div>
+                  <!-- /.progress-group -->
+  
+                  <div class="progress-group">
+                    Happy With Customer Relationship 
+                    <span class="float-right"><b>30</b>/100</span>
+                    <div class="progress progress-sm">
+                      <div class="progress-bar bg-danger" style="width: 30%"></div>
+                    </div>
+                  </div>
+  
+                  <!-- /.progress-group -->
+                  <div class="progress-group">
+                    <span class="progress-text">Minimum Foreign Trasaction Fee</span>
+                    <span class="float-right"><b>20</b>/100</span>
+                    <div class="progress progress-sm">
+                      <div class="progress-bar bg-success" style="width: 20%"></div>
+                    </div>
+                  </div>
+  
+                  <!-- /.progress-group -->
+                  <div class="progress-group">
+                    Overall Experience
+                    <span class="float-right"><b>10</b>/100</span>
+                    <div class="progress progress-sm">
+                      <div class="progress-bar bg-warning" style="width: 10%"></div>
+                    </div>
+                  </div>
+                  <!-- /.progress-group -->
+                </div>
+                <!-- /.col -->
+              <!-- /.col -->
+              <div class="col-md-6">
+                <p class="text-center">
+                  <strong>Account Closure Reasons (Top 4)</strong>
+                </p>
 
+                <div class="progress-group">
+                  Lack of ATMs and Branches
+                  <span class="float-right"><b>35</b>/100</span>
+                  <div class="progress progress-sm">
+                    <div class="progress-bar bg-primary" style="width: 35%"></div>
+                  </div>
+                </div>
+                <!-- /.progress-group -->
+
+                <div class="progress-group">
+                  Poor Customer Service
+                  <span class="float-right"><b>20</b>/100</span>
+                  <div class="progress progress-sm">
+                    <div class="progress-bar bg-danger" style="width: 20%"></div>
+                  </div>
+                </div>
+
+                <!-- /.progress-group -->
+                <div class="progress-group">
+                  <span class="progress-text">Visit Premium Page</span>
+                  <span class="float-right"><b>10</b>/100</span>
+                  <div class="progress progress-sm">
+                    <div class="progress-bar bg-success" style="width: 10%"></div>
+                  </div>
+                </div>
+
+                <!-- /.progress-group -->
+                <div class="progress-group">
+                  High Account Maintenance 
+                  <span class="float-right"><b>5</b>/100</span>
+                  <div class="progress progress-sm">
+                    <div class="progress-bar bg-warning" style="width: 5%"></div>
+                  </div>
+                </div>
+                <!-- /.progress-group -->
+              </div>
+              <!-- /.col -->
+            </div>
+            <!-- /.row -->
+          </div>
+          <!-- ./card-body -->
           <!-- Main row -->
           <div class="row">
             <!-- Left col -->
             <div class="col-md-8">
               <div class="card">
                 <div class="card-header border-transparent">
-                  <h3 class="card-title">Recently worked on (Top-10)</h3>
+                  <h3 class="card-title">Recently worked on</h3>
 
                   <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -202,7 +293,7 @@
                 <!-- /.card-body -->
                 <div class="card-footer clearfix">
                   <!--<a href="javascript:void(0)" class="btn btn-sm btn-info float-left">Assign 5 Random</a>-->
-                  <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-right">View All</a>
+                  <a href="/Assigned" class="btn btn-sm btn-secondary float-right">View All</a>
                 </div>
                 <!-- /.card-footer -->
               </div>
@@ -210,7 +301,7 @@
               <!-- TABLE: LATEST ORDERS -->
               <div class="card collapsed-card">
                 <div class="card-header border-transparent">
-                  <h3 class="card-title">New Dormant Accounts (Top-10)</h3>
+                  <h3 class="card-title">New Dormant Accounts</h3>
 
                   <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -320,14 +411,14 @@
                 <!-- /.card-body -->
                 <div class="card-footer clearfix">
                   <a href="javascript:void(0)" class="btn btn-sm btn-primary float-left">Assign 5 Random</a>
-                  <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-right">View All</a>
+                  <a href="/Dormants" class="btn btn-sm btn-secondary float-right">View All</a>
                 </div>
                 <!-- /.card-footer -->
               </div>
 
               <div class="card collapsed-card">
                 <div class="card-header border-transparent">
-                  <h3 class="card-title">Accounts Assigned to me (Top-10)</h3>
+                  <h3 class="card-title">Accounts Assigned to me</h3>
 
                   <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -415,14 +506,14 @@
                 <!-- /.card-body -->
                 <div class="card-footer clearfix">
                   <!--<a href="javascript:void(0)" class="btn btn-sm btn-info float-left">Assign 5 Random</a>-->
-                  <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-right">View All</a>
+                  <a href="/Assigned" class="btn btn-sm btn-secondary float-right">View All</a>
                 </div>
                 <!-- /.card-footer -->
               </div>
 
               <div class="card collapsed-card">
                 <div class="card-header border-transparent">
-                  <h3 class="card-title">Accounts Requiring Follow-ups (Top-10)</h3>
+                  <h3 class="card-title">Accounts Requiring Follow-ups</h3>
 
                   <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -510,7 +601,7 @@
                 <!-- /.card-body -->
                 <div class="card-footer clearfix">
                   <!--<a href="javascript:void(0)" class="btn btn-sm btn-info float-left">Assign 5 Random</a>-->
-                  <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-right">View All</a>
+                  <a href="/Followups" class="btn btn-sm btn-secondary float-right">View All</a>
                 </div>
                 <!-- /.card-footer -->
               </div>
