@@ -155,7 +155,7 @@
 <mat-dialog-actions class="actions">
         <div class="exprt-files-btn">
         <button mat-raised-button [disabled]="!checkInputsValid()" (click)="generatePdf()" mat-raised-button color="primary">Export</button>
-        <button mat-raised-button [disabled]="!checkInputsValid()" color="primary" mat-button mat-dialog-close>Cancel</button>
+        <button *ngIf="showCancelButton" mat-raised-button color="primary" mat-button mat-dialog-close >Cancel</button>
         </div>
 </mat-dialog-actions>
 
