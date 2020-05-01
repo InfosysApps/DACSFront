@@ -52,6 +52,7 @@ export class LoginComponent implements OnInit {
                         this._SessionHelper.TokenKey, 
                         response.responseobj.token);
                 this._Router.navigateByUrl('/ODashboard');
+                this.loginForm.reset();
 
                   // this._Talk.Success(new TalkParam({
                   //   Title: "Good job!", 
@@ -65,13 +66,15 @@ export class LoginComponent implements OnInit {
               //   Text:"Please try with correct login credentials.", 
               //   Icon: "error", 
               //   ConfirmButtonText:"Ok"}));
+              this.loginForm.reset();
             }
 
           }, error => {
               console.log("Error "+error);
+              this.loginForm.reset();
           });
 
-          this.loginForm.reset();
+          
     }
     else{
       Object.keys(this.loginForm.controls).forEach(field => { // {1}
