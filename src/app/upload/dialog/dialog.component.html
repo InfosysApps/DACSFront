@@ -1,9 +1,6 @@
 <input type="file" #file style="display: none" (change)="onFilesAdded()" multiple />
 <div class="container" fxLayout="column" fxLayoutAlign="space-evenly stretch">
   
-
-
-
   <div>
 
                 
@@ -119,38 +116,36 @@
           </ul>
         </nav>
         <!-- /.navbar -->
-        <nav class="mt-2">
-          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                  <li class="nav-item has-treeview menu-open">
-                      <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                          
-                            <i class="fa fa-circle nav-icon"></i>
-                            <p>Upload a Operator Account Details</p>
-                          
-                        </li>
-                      </ul>
-                  </li>
-          </ul>
-  </nav>
-           
-          
+        <nav >
+          <div class="callout callout-info">
+            <h5><i class="fa "></i> Import:</h5>
+            Upload a Operator Account Details.
+          </div>
+          </nav>
          
   </div>
+
+
   
-  <b><small style="font-style: italic;" >Please upload file below...</small></b>
+  
+  
   <div>
-    <small></small>
-    <button [disabled]="uploading || uploadSuccessful" mat-raised-button color="primary" class="add-files-btn" (click)="addFiles()">
-      Add Files
-    </button>
+    <mat-dialog-actions >
+      <div >
+          <button [disabled]="uploading || uploadSuccessful" mat-raised-button color="primary" class="add-files-btn" (click)="addFiles()">
+            Add Files
+          </button>
        
+      </div>
+    </mat-dialog-actions>
+    <br>
+    <div>
+      <span class="limit-warn"  >*Files under 5MB are supported</span> <br>
+      <span class="limit-warn"  >*Supported Formats: .xls, .xlsx, .csv</span>
+      
+    </div>
   </div>
-<div>
-    <span class="limit-warn"  >*Files under 5MB are supported</span> <br>
-    <span class="limit-warn"  >*Supported Formats: .xls, .xlsx, .csv</span>
-    
-</div>
+
   <!-- This is the content of the dialog, containing a list of the files to upload -->
   <mat-dialog-content fxFlex>
     <mat-list>

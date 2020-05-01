@@ -16,7 +16,7 @@ export class DialogComponent implements OnInit {
   constructor(public dialogRef: MatDialogRef<DialogComponent>, public uploadService: UploadService) { }
 
   ngOnInit() { }
-
+  filesAdded: { [key: string]: File }
   progress;
   canBeClosed = true;
   primaryButtonText = 'Upload';
@@ -24,6 +24,7 @@ export class DialogComponent implements OnInit {
   uploading = false;
   uploadSuccessful = false;
   addedfile :File;
+  isFileAdded=false;
   message;
   onFilesAdded() {
 
@@ -38,6 +39,8 @@ export class DialogComponent implements OnInit {
 
         this.message = "";
        let fileval:File;
+
+       
         
     for (let key in files) {
    
@@ -55,7 +58,7 @@ export class DialogComponent implements OnInit {
           
           return;
       }
-
+            this.isFileAdded=true;
                this.files.add(files[key]);
       }
       
@@ -65,17 +68,31 @@ export class DialogComponent implements OnInit {
   addFiles() {
 
     this.addedfile=this.file;
-
+    
     this.file.nativeElement.click();
     
           
   }
 
   closeDialog() {
+
+    
+    
+        this.message = "";
+       
+
+     if(!this.isFileAdded){
+        this.message = "please add files before uploading";
+         return;
+      }
+    
     // if everything was uploaded already, just close the dialog
     if (this.uploadSuccessful) {
       return this.dialogRef.close();
     }
+
+     
+
 
     // set the component state to "uploading"
     this.uploading = true;

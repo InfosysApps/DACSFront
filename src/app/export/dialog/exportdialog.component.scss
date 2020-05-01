@@ -9,6 +9,11 @@
   flex-direction: column;
   
 }
+.mt-2{
+  overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+  }
 
 .actions {
   justify-content: flex-end;

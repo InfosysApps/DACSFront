@@ -114,41 +114,37 @@
         </ul>
       </nav>
       <!-- /.navbar -->
-      <nav class="mt-2">
-                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                        <li class="nav-item has-treeview menu-open">
-                            <ul class="nav nav-treeview">
-                              <li class="nav-item">
-                                <a href="/ODashboard" class="nav-link ">
-                                  <i class="fa fa-circle nav-icon"></i>
-                                  <p>Export  a Operator Account Details</p>
-                                </a>
-                              </li>
-                            </ul>
-                        </li>
-                </ul>
+      <nav >
+        <div class="callout callout-info">
+          <h5><i class="fa "></i> Export:</h5>
+          Export a Operator Account Details.
+        </div>
         </nav>
        
 </div>
 
 <div>
-        <mat-form-field>
-                <mat-label >Choose a From Date</mat-label>
-                <input matInput [matDatepicker]="fromPicker" 
-                [disabled]="!true">
-            <mat-datepicker-toggle matSuffix [for]="fromPicker"></mat-datepicker-toggle>
-            <mat-datepicker #fromPicker></mat-datepicker>
-                
-            </mat-form-field>
-            <br><br>
-            <mat-form-field>
-                    <mat-label >Choose a To Date</mat-label>
-                    <input matInput [matDatepicker]="fromPickerFr" 
-                    [disabled]="!true">
-                <mat-datepicker-toggle matSuffix [for]="fromPickerFr"></mat-datepicker-toggle>
-                <mat-datepicker #fromPickerFr></mat-datepicker>
-                    
-                </mat-form-field>
+     
+    <mat-form-field [(ngModel)]="fromDateValid"  ngDefaultControl >
+        <mat-label >Choose a From Date</mat-label>
+        <input matInput [matDatepicker]="fromPicker" [(ngModel)]="fromDateValue" ngDefaultControl 
+        >
+    <mat-datepicker-toggle matSuffix [for]="fromPicker"></mat-datepicker-toggle>
+    <mat-datepicker #fromPicker></mat-datepicker>
+        
+</mat-form-field>
+    <br><br>
+    <mat-form-field  [(ngModel)]="toDateValid"  ngDefaultControl >
+            <mat-label >Choose a To Date</mat-label>
+            <input matInput [matDatepicker]="ToPicker"  [(ngModel)]="toDateValue" ngDefaultControl 
+            >
+        <mat-datepicker-toggle matSuffix [for]="ToPicker"></mat-datepicker-toggle>
+        <mat-datepicker #ToPicker></mat-datepicker>
+            
+    </mat-form-field>
+
+    
+
 </div>
 
 
@@ -158,8 +154,8 @@
     
 <mat-dialog-actions class="actions">
         <div class="exprt-files-btn">
-        <button mat-raised-button (click)="generatePdf()" mat-raised-button color="primary">Export</button>
-        <button *ngIf="showCancelButton" mat-raised-button color="primary" mat-button mat-dialog-close>Cancel</button>
+        <button mat-raised-button [disabled]="!checkInputsValid()" (click)="generatePdf()" mat-raised-button color="primary">Export</button>
+        <button mat-raised-button [disabled]="!checkInputsValid()" color="primary" mat-button mat-dialog-close>Cancel</button>
         </div>
 </mat-dialog-actions>
 

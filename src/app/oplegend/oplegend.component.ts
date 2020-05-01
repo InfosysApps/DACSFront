@@ -134,11 +134,11 @@ export class OplegendComponent implements OnInit {
 
 
   public importpdf():void{
-    let dialogRef = this.dialog.open(DialogComponent, { width: '50%', height: '50%' });
+    let dialogRef = this.dialog.open(DialogComponent, { width: '50%', height: '70%' });
   }
 
   public exportpdf():void{
-    let dialogRef = this.dialog.open(ExportDialogComponent, { width: '50%', height: '50%' });
+    let dialogRef = this.dialog.open(ExportDialogComponent, { width: '50%', height: '70%' });
   }
 
 

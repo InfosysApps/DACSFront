@@ -15,29 +15,38 @@ import { FileUiExportModel } from 'src/app/model/file.ui.export.model';
 export class ExportDialogComponent implements OnInit {
   @ViewChild('file', { static: false }) file;
 
+  fromDateValue: Date;
+  fromDateValid: Boolean=false;
+  toDateValue: Date;
+  toDateValid: Boolean=false;
 
   public files: Set<File> = new Set();
   fileUiExportModel: FileUiExportModel;
   constructor(public dialogRef: MatDialogRef<ExportDialogComponent>, public uploadService: ExportService) { }
 
   ngOnInit() { 
-
-    this.fileUiExportModel.typeAllowed = [
-      { value: '.xlsx', viewValue: 'Excel Sheet' },
-      { value: '.pdf', viewValue: 'PDF' },
-      { value: '.csv', viewValue: 'CSV File' }
-    ];
-
-
+this.fileExportModelReset()
   }
 
+  fileExportModelReset() {
+    this.fileUiExportModel = new FileUiExportModel();
+      
+    
+    
+    this.message = null;
+
+    
+    
+  }
   progress;
+  typeSelected:string=null;
   canBeClosed = true;
   primaryButtonText = 'Upload';
   showCancelButton = true;
   uploading = false;
   uploadSuccessful = false;
   addedfile :File;
+  typeAllowed:[];
   message;
   onFilesAdded() {
     const files: { [key: string]: File } = this.file.nativeElement.files;
@@ -176,6 +185,19 @@ export class ExportDialogComponent implements OnInit {
     pdfMake.createPdf(dd).download();
   };
 
+  checkInputsValid(): Boolean {
+    
+    
+ 
+          if(this.toDateValue!=undefined && this.fromDateValue !=undefined)
+          {
+            
+            return true;
+          }
+          else{
+             return false;
+          }              
 
+  }
 
 }
